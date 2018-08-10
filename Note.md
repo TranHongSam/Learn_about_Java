@@ -1,8 +1,8 @@
 # Học Java
 
-*1 file .java không giới hạn số class trong 1 file. Tuy nhiên trong 1 file chỉ được có duy nhất 1 public class.*
+    *1 file .java không giới hạn số class trong 1 file. Tuy nhiên trong 1 file chỉ được có duy nhất 1 public class.*
 
-*Phân biệt chữ hoa và chữ thường*
+    *Phân biệt chữ hoa và chữ thường*
 
 **1. Định nghĩa cơ bản**
 
@@ -21,7 +21,7 @@
 - Tên hằng: Nên bắt đầu với chữ hoa, ví dụ: RED, YELLOW, MAX_PRIORITY...
 - Tên file chương trình: Tên file nên giống hệt tên class. 
 
-**Khi lưu file, nên sử dụng tên class và thêm hậu tố .java**
+    **Khi lưu file, nên sử dụng tên class và thêm hậu tố .java**
 
 - Chương trình Java bắt đầu bởi phương thức main() cho tất cả các chương trình J2SE: public static void main(String args[]).
 - Định danh (Identifer): bắt đầu với 1 chữ cái (A tới Z hoặc a tới z), ký tự $ hoặc ký tự _, identifier phân biệt chữ hoa chữ thường.
@@ -143,3 +143,35 @@
 <img src="https://2.pik.vn/2018b974be1b-3ab2-410d-8572-19b5409e668d.jpg">
 
 <img src="https://2.pik.vn/20187f2bcb25-95ef-4db6-9dad-90fc98c9ebbe.jpg">
+
+**10. Hướng đối tượng (OOP)**
+- Đối tượng (Object): là thực thể mang tính vật lý và logic, đối tượng có trạng thái và hành vi.
+- Lớp (class): là 1 nhóm các đối tượng có các thuộc tính chung.
+
+*Đối tượng trong Java*
+- Một đối tượng có 3 đặc trưng: trạng thái, hành vi, nhận diện
+- Đối tượng là instance (kết quả) của một lớp.
+
+*Lớp trong Java*
+- Lớp là một template hoặc bản thiết kế từ đó đối tượng được tạo.
+- Một lớp bao gồm: thành viên dữ liệu, phương thức, constructor, block, lớp và interface.
+- Cú pháp:
+            class ten_lop{
+                thanh_vien_du_lieu;
+                phuong_thuc;
+            }
+- Một lớp có thể có bất kỳ loại biến sau:
+
+    Biến Local: được ĐN trong phương thức, constructor, block.
+
+    Biến Instance: là biến trong 1 lớp nhưng ở bên ngoài bất kỳ phương thức nào.
+
+    Biến class: đc khai báo với 1 lớp, bên ngoài bất kỳ phương thức nào với từ khóa static.
+
+*Phương thức trong Java*
+- Khá giống hàm, sd để trưng bày hành vi of 1 đối tượng.
+- Sd từ khóa new để cấp phát bộ nhớ tại runtime.
+
+*Constructor trong Java*
+- Khi một đối tượng mới được tạo ra ít nhất một constructor sẽ được gọi.
+- Construcotr có cùng tên với lớp đó.
