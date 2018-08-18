@@ -171,12 +171,6 @@
 *Phương thức trong Java*
 - Khá giống hàm, sd để trưng bày hành vi of 1 đối tượng.
 - Sd từ khóa new để cấp phát bộ nhớ tại runtime.
-
-*Constructor trong Java*
-- Khi một đối tượng mới được tạo ra ít nhất một constructor sẽ được gọi.
-- Construcotr có cùng tên với lớp đó.
-
-*Phương thức trong Java*
 - Phương thức là tập hợp các lệnh được nhóm cùng với nhau để thực hiện 1 hành động.
 - Cú pháp:
     public static int tenPhuongThuc(int a, int b){
@@ -187,7 +181,23 @@
 - Truyền các tham số bởi giá trị trong Java: các tham số có thể được truyền bởi giá trị hoặc bởi tham chiếu. Truyền các tham số bởi giá trị nghĩa là gọi 1 phương thức với 1 tham số, thông qua điều này giá trị tham số được truyền tới tham số.
 - Nạp chồng phương thức (Method overloading): một lớp có 2 hoặc nhiều phương thức cùng tên nhưng khác nhau về tham số nó được biết đên như là phương thức overloading.
 - Sử dụng các tham số dòng lệnh (conman-line): khi muốn truyền thông tin vào trong 1 chương trình đang chạy, điều này được thực hiện bởi việc truyền các tham số dòng lệnh tới phương thức main(). 
-- Constructor trong Java: 1 constructor khởi tạo 1 đối tượng khi nó được tạo. Nó cùng tên với lớp của nó và cú pháp tương tự như 1 phương thức, tuy nhiên các constructor không có kiểu trả về rõ ràng. Một nét đặc trưng là, bạn sẽ sử dụng một constructor để cung cấp các giá trị khởi tạo tới các biến instance được định nghĩa bởi lớp, hoặc để thực thi bất kỳ thủ tục khởi đầu nào khác được yêu cầu để tạo một đối tượng theo mẫu. Tất cả các lớp đều có các constructor, dù bạn có hay không định nghĩa nó, bởi vì Java tự động cung cấp một constructor mặc định mà khởi tạo tất cả biến thành viên về zero. Tuy nhiên, một khi bạn định nghĩa constructor cho riêng bạn, thì constructor mặc định sẽ không còn được sử dụng nữa. Thường thì, bạn sẽ cần một constructor mà chấp nhận một hoặc nhiều tham số. Các tham số được thêm tới một constructor theo cách tương tự như chúng được thêm tới một phương thức, vừa khai báo chúng bên trong dấu ngoặc đơn ở sau tên của constructor.
+- Các tham số biến (var-args): khả năng truyền một số các tham số biến cùng kiểu tới một phương thức, tham số trong phương thức được khai báo như sau: tenKieu... tenThamSo 
+- Phương thức finalize() trong Java: định nghĩa một phương thức mà sẽ được gọi ngay trước khi hủy 1 đối tượng, có thể được sử dụng để chắc chắn rằng 1 đối tượng hoàn toàn kết thúc.
+
+**Nạp chồng phương thức trong Java**
+- Nạp chồng phương thức (Method Overloading) là một lớp có nhiều phương thức cùng tên nhưng có số tham số khác nhau.
+- Có 2 cách nạp chồng phương thức: thay đổi tham số, thay đổi kiểu dữ liệu.
+- Không thể nạp chồng phương thức bằng cách thay đổi kiểu trả về của phương thức, vì việc này gây ra tính lưỡng tính mơ hồ.
+- Có thể nạp chồng phương thức main(), có thể có bất kỳ số lượng phương thức main nào trong 1 lớp bởi nạp chồng phương thức.
+- Nạp chông phương thức và TypePromotion trong Java: một kiểu được promote thành 1 kiểu khác hoàn toàn nếu không tìm thấy kiểu dũ liệu nào được kết nối.
+
+<img src="https://2.pik.vn/201818352f5f-4225-43a5-82b5-8b0ff2298d7b.jpg">
+
+Trong sơ đồ trên, byte có thể được promote thành short, int, long, float, double. Kiểu short có thể được promote thành int,long, float, double. Kiểu char có thể được promote thành int, float, long, double...
+- Overload: 2 hay nhiều hàm cùng tên mà khác số lượng tham số hoặc khác kiểu tham số.
+
+**Constructor trong Java**
+- 1 constructor khởi tạo 1 đối tượng khi nó được tạo. Nó cùng tên với lớp của nó và cú pháp tương tự như 1 phương thức, tuy nhiên các constructor không có kiểu trả về rõ ràng. Một nét đặc trưng là, bạn sẽ sử dụng một constructor để cung cấp các giá trị khởi tạo tới các biến instance được định nghĩa bởi lớp, hoặc để thực thi bất kỳ thủ tục khởi đầu nào khác được yêu cầu để tạo một đối tượng theo mẫu. Tất cả các lớp đều có các constructor, dù bạn có hay không định nghĩa nó, bởi vì Java tự động cung cấp một constructor mặc định mà khởi tạo tất cả biến thành viên về zero. Tuy nhiên, một khi bạn định nghĩa constructor cho riêng bạn, thì constructor mặc định sẽ không còn được sử dụng nữa. Thường thì, bạn sẽ cần một constructor mà chấp nhận một hoặc nhiều tham số. Các tham số được thêm tới một constructor theo cách tương tự như chúng được thêm tới một phương thức, vừa khai báo chúng bên trong dấu ngoặc đơn ở sau tên của constructor.
     // Một constructor
     class MyClass(){
         int x;
@@ -205,19 +215,28 @@
             System.out.println(t1.x + " " + t2.x);
         }
     }
-- Các tham số biến (var-args): khả năng truyền một số các tham số biến cùng kiểu tới một phương thức, tham số trong phương thức được khai báo như sau: tenKieu... tenThamSo 
-- Phương thức finalize() trong Java: định nghĩa một phương thức mà sẽ được gọi ngay trước khi hủy 1 đối tượng, có thể được sử dụng để chắc chắn rằng 1 đối tượng hoàn toàn kết thúc.
+- Khi một đối tượng mới được tạo ra ít nhất một constructor sẽ được gọi.
+- Construcotr có cùng tên với lớp đó.
+- Constructor là 1 kiểu phương thức đặc biệt được sử dụng để khởi tạo đối tượng, constructor được triệu hồi tại thời gian tạo đối tượng, nó xây dựng giá trị, cung cấp dữ liệu cho đối tượng.
+- Mỗi lớp có ít nhất một constructor, các constructor có cùng tên với lớp đó.
+- Quy tắc tạo constructor: có 2 loại constructor: loại mặc định k có tham số (nóBlank Space cung cấp giá trị mặc định như 0, null,... tùy thuộc vào kiểu dữ liệu), constructor được tham số hóa (cung cấp giá trị khá nhau cho các đối tượng riêng biệt).
 
-**Nạp chồng phương thức trong Java**
-- Nạp chồng phương thức (Method Overloading) là một lớp có nhiều phương thức cùng tên nhưng có số tham số khác nhau.
-- Có 2 cách nạp chồng phương thức: thay đổi tham số, thay đổi kiểu dữ liệu.
-- Không thể nạp chồng phương thức bằng cách thay đổi kiểu trả về của phương thức, vì việc này gây ra tính lưỡng tính mơ hồ.
-- Có thể nạp chồng phương thức main(), có thể có bất kỳ số lượng phương thức main nào trong 1 lớp bởi nạp chồng phương thức.
-- Nạp chông phương thức và TypePromotion trong Java: một kiểu được promote thành 1 kiểu khác hoàn toàn nếu không tìm thấy kiểu dũ liệu nào được kết nối.
+    Constructor mặc định: *ten_lop(){}* (nếu không có constructor nào được xác định trong một lớp thì Compliler tự động tạo một constructor mặc định).
 
-<img src="https://2.pik.vn/201818352f5f-4225-43a5-82b5-8b0ff2298d7b.jpg">
+    Constructor được tham số hóa.
 
-Trong sơ đồ trên, byte có thể được promote thành short, int, long, float, double. Kiểu short có thể được promote thành int,long, float, double. Kiểu char có thể được promote thành int, float, long, double...
-- Overload: 2 hay nhiều hàm cùng tên mà khác số lượng tham số hoặc khác kiểu tham số.
+- Nạp chồng constructor trong Java: một lớp có thể có bất cứ số lượng Constructor nào mà khác nhau về danh sách tham số. Phân biệt các constructor bằng việc phân tích số tham số trong danh sách và kiểu của chúng.
+- Sự khác nhau giữa Constructor và Phương thức trong Java
 
-**Constructor trong Java**
+<img src="https://2.pik.vn/2018fa59f11e-fb40-4861-96e4-81291b74e138.jpg">
+
+- Copy Constructor trong Java: k có Copy Constructor như trong C++. Tuy nhiên, có thể sao chép các giá trị của một đối tượng tới đối tượng khác. Có 3 cách thực hiện việc sao chép các giá trị: Bởi Constructor; Bởi gán các giá trị của một đối tượng vào trong đối tượng khác; Bởi phương thức clone() của lớp Object.
+- Sao chép các giá trị mà không sử dụng Constructor: bằng cách gán các giá trị của đối tượng đó vào trong đối tượng khác. Trong trường hợp này, không cần tạo Constructor.
+- Constructor trả về giá trị, đó là instance(sự thể hiện) của lớp hiện tại, bạn không thể sử dụng kiểu trả về tuy vậy nó trả về một giá trị.
+- Constructor có thực hiện các tác vụ khác ngoài khởi tạo. Giống như quá trình tạo đối tượng, bắt đầu một Thread, gọi phương thức,... bạn có thể thực hiện bất cứ hoạt động nào trong Constructor như khi bạn thực hiện trong phương thức.
+
+**Từ khóa Static**
+
+
+
+
