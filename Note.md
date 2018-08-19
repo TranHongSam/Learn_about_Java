@@ -236,6 +236,22 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Constructor có thực hiện các tác vụ khác ngoài khởi tạo. Giống như quá trình tạo đối tượng, bắt đầu một Thread, gọi phương thức,... bạn có thể thực hiện bất cứ hoạt động nào trong Constructor như khi bạn thực hiện trong phương thức.
 
 **Từ khóa Static**
+- Sử dụng để quản lý bộ nhớ.
+- Có thể áp dụng từ khóa static với biến (cũng ddc gọi là biến lớp, biến class), phương thức (cũng đc gọi là phương thức lớp), khối, các lớp đc lặp.
+- Static thuộc về lớp chứ không thuộc về instance(sự thể hiện) của lớp.
+- Khi khai báo biến là static, thì biến đó là biến tĩnh hay biến static. Biến static giúp chương trình sử dụng hiệu quả hơn (tiết kiệm bộ nhớ).
+- Phương thức Static trong Java: Nếu áp dụng từ khóa static với bất kỳ phương thức nào, thì phương thức đó được gọi là phương thức static; Một phương thức static thuộc lớp chứ không phải đối tượng của lớp; Phương thức static có thể ddc triệu hội mà không cần tạo 1 instance của 1 lớp; Phương thức static có thể truy cập thành viên dữ liệu static và có thể thay đổi giá trị của nó.
+- Hạn chế của phương thức static:
+
+    Không thể sử dụng thành viên dữ liệu non-static hoặc gọi trực tiếp phương thức non-static.
+
+    Từ khóa this và super không thể được sử dụng trong ngữ cảnh static.
+
+- Phương thức main trong Java là static vì đối tượng là không cần thiết để gọi phương thức static nếu nó là phương thức non-static, JVM đầu tiên tạo đối tượng và sau đó gọi phương thức main() mà có thể gây ra vấn đề cấp phát bộ nhớ phụ.
+- Khối static trong Java: được sử dụng để khởi tạo thành viên dữ liệu static, nó được thực thi trước phương thức main tại thời gian tải lớp.
+- Có thể thực thi 1 chương trình mà không có phương thức main(), một trong các cách là khối static trong phiên bản trước của JDK, không trong JDK 1.7.
+
+
 
 
 
