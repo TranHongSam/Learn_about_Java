@@ -251,6 +251,32 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Khối static trong Java: được sử dụng để khởi tạo thành viên dữ liệu static, nó được thực thi trước phương thức main tại thời gian tải lớp.
 - Có thể thực thi 1 chương trình mà không có phương thức main(), một trong các cách là khối static trong phiên bản trước của JDK, không trong JDK 1.7.
 
+**Từ khóa this trong Java**
+- Trong Java, this là một biến tham chiếu mà tham chiếu tới đối tượng hiện tại.
+- Sử dụng từ khóa this trong Java:
+
+    SD để tham chiếu biến instance của lớp (khi biến cục bộ và biến instance giống nhau thì cần sd từ khóa this).
+
+    this() sd để triệu hồi Constructor của lớp hiện tại.
+
+    SD để triệu hồi ngầm định phương thức lớp hiện tại.
+
+    Có thể đc truyền như 1 tham số trong lời gọi phương thức.
+
+    Có thể đc truyền như 1 tham số trong lời gọi Constructor.
+
+    SD để trả về instance của lớp hiện tại.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
