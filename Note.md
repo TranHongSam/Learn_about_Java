@@ -144,7 +144,7 @@
 
 <img src="https://2.pik.vn/20187f2bcb25-95ef-4db6-9dad-90fc98c9ebbe.jpg">
 
-**10. Hướng đối tượng (OOP)**
+**11. Hướng đối tượng (OOP)**
 - Đối tượng (Object): là thực thể mang tính vật lý và logic, đối tượng có trạng thái và hành vi.
 - Lớp (class): là 1 nhóm các đối tượng có các thuộc tính chung.
 
@@ -184,7 +184,7 @@
 - Các tham số biến (var-args): khả năng truyền một số các tham số biến cùng kiểu tới một phương thức, tham số trong phương thức được khai báo như sau: tenKieu... tenThamSo 
 - Phương thức finalize() trong Java: định nghĩa một phương thức mà sẽ được gọi ngay trước khi hủy 1 đối tượng, có thể được sử dụng để chắc chắn rằng 1 đối tượng hoàn toàn kết thúc.
 
-**Nạp chồng phương thức trong Java**
+**12. Nạp chồng phương thức trong Java**
 - Nạp chồng phương thức (Method Overloading) là một lớp có nhiều phương thức cùng tên nhưng có số tham số khác nhau.
 - Có 2 cách nạp chồng phương thức: thay đổi tham số, thay đổi kiểu dữ liệu.
 - Không thể nạp chồng phương thức bằng cách thay đổi kiểu trả về của phương thức, vì việc này gây ra tính lưỡng tính mơ hồ.
@@ -196,7 +196,7 @@
 Trong sơ đồ trên, byte có thể được promote thành short, int, long, float, double. Kiểu short có thể được promote thành int,long, float, double. Kiểu char có thể được promote thành int, float, long, double...
 - Overload: 2 hay nhiều hàm cùng tên mà khác số lượng tham số hoặc khác kiểu tham số.
 
-**Constructor trong Java**
+**13. Constructor trong Java**
 - 1 constructor khởi tạo 1 đối tượng khi nó được tạo. Nó cùng tên với lớp của nó và cú pháp tương tự như 1 phương thức, tuy nhiên các constructor không có kiểu trả về rõ ràng. Một nét đặc trưng là, bạn sẽ sử dụng một constructor để cung cấp các giá trị khởi tạo tới các biến instance được định nghĩa bởi lớp, hoặc để thực thi bất kỳ thủ tục khởi đầu nào khác được yêu cầu để tạo một đối tượng theo mẫu. Tất cả các lớp đều có các constructor, dù bạn có hay không định nghĩa nó, bởi vì Java tự động cung cấp một constructor mặc định mà khởi tạo tất cả biến thành viên về zero. Tuy nhiên, một khi bạn định nghĩa constructor cho riêng bạn, thì constructor mặc định sẽ không còn được sử dụng nữa. Thường thì, bạn sẽ cần một constructor mà chấp nhận một hoặc nhiều tham số. Các tham số được thêm tới một constructor theo cách tương tự như chúng được thêm tới một phương thức, vừa khai báo chúng bên trong dấu ngoặc đơn ở sau tên của constructor.
     // Một constructor
     class MyClass(){
@@ -235,7 +235,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Constructor trả về giá trị, đó là instance(sự thể hiện) của lớp hiện tại, bạn không thể sử dụng kiểu trả về tuy vậy nó trả về một giá trị.
 - Constructor có thực hiện các tác vụ khác ngoài khởi tạo. Giống như quá trình tạo đối tượng, bắt đầu một Thread, gọi phương thức,... bạn có thể thực hiện bất cứ hoạt động nào trong Constructor như khi bạn thực hiện trong phương thức.
 
-**Từ khóa Static**
+**14. Từ khóa Static**
 - Sử dụng để quản lý bộ nhớ.
 - Có thể áp dụng từ khóa static với biến (cũng ddc gọi là biến lớp, biến class), phương thức (cũng đc gọi là phương thức lớp), khối, các lớp đc lặp.
 - Static thuộc về lớp chứ không thuộc về instance(sự thể hiện) của lớp.
@@ -251,7 +251,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Khối static trong Java: được sử dụng để khởi tạo thành viên dữ liệu static, nó được thực thi trước phương thức main tại thời gian tải lớp.
 - Có thể thực thi 1 chương trình mà không có phương thức main(), một trong các cách là khối static trong phiên bản trước của JDK, không trong JDK 1.7.
 
-**Từ khóa this trong Java**
+**15. Từ khóa this trong Java**
 - Trong Java, this là một biến tham chiếu mà tham chiếu tới đối tượng hiện tại.
 - Sử dụng từ khóa this trong Java:
 
@@ -267,6 +267,43 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 
     SD để trả về instance của lớp hiện tại.
 
+
+**16. Tính kế thừa - Từ khóa extends và implenments**
+- Tính kế thừa trong Java là một kỹ thuật mà trong đó 1 đối tượng thu được tất cả thuộc tính và hành vi của đối tượng cha.
+- Có thể tạo các lớp mới mà được xây dựng dựa trên các lớp đang tồn tại.
+- Khi kế thừa từ 1 lớp đang tồn tại, có thể tái sử dụng các phương thức và các trường của lớp cha, cũng có thể bố sung thêm các phương thức và các trường khác.
+- Tính kế thừa biến diễn mỗi quan hệ IS-A, hay mph cha-con.
+- Từ khóa extends và implements có thể định nghĩa 1 kiểu là loại IS-A của loại khác; sử dụng từ khóa, chúng ta có thể tạo ra 1 đối tượng sử dụng thuộc tính của đối tượng khác. Chúng ta sử dụng từ khóa extends của lớp con để có thể kế thừa các thuộc tính của lớp cha trừ các thuộc tính private.
+- Sử dụng tính kế thừa: để ghi đè phương thức (method overriding) do đó có thể thu được tính đa hình tại runtime, để làm tăng tính tái sử dụng code.
+- Từ khóa extends chỉ ra rằng bạn đang tạo 1 lớp mới từ một lớp đang tồn tại:
+
+    class ten_lop_con extends ten_lop_cha{
+
+        // các phương thức và các trường
+
+    }
+
+- Các loại kế thừa trong Java: có 3 loại single(đơn), multilevel(nhiều tầng), hierarchical(có cấu trúc); trong lập trình Java đa kế thừa(multiple) và kế thừa lai(hybrid) chỉ được hỗ trợ thông qua interface.
+- Đa kế thừa không được hỗ trợ trong Java thông qua lớp (để giảm tính phức tạp và làm đơn giản hóa ngôn ngữ), khi 1 lớp kế thừa từ nhiều lớp thì đây là đa kế thừa.
+- Trong Java chỉ hỗ trợ kế thừa đơn, nghĩa là 1 lớp không thể kế thừa từ nhiều hơn 1 lớp.
+- Mặc dù vậy, một lớp vẫn có thể implements một hoặc nhiều interface, điều này loại bỏ khả năng không thể đa kế thừa trong Java.
+- Từ khóa implements được sử dụng bởi các lớp mà kế thừa từ interface. Interface có thể không bao giờ được kế thừa bởi các lớp.
+
+    VD:
+
+    public ỉnterface A {}
+
+    public class B implements A{}
+
+    public class C extends B{}
+
+*Lớp final là lớp không thể kế thừa* 
+
+**17. Quan hệ HAS-A trong Java** 
+- Có những quan hệ chủ yếu dựa vào cách sử dụng, nó xác định có hay không 1 lớp cụ thể HAS-A, quan hệ này giúp chúng ta giảm được dư thừa trong code cũng như tránh các bug.
+- Nếu một lớp có 1 tham chiếu thực thể, nó được biết đến như 1 lớp có quan hệ HAS-A.
+- Sử dụng HAS-A làm tăng tính tái sử dụng code, khi không có mqh IS-A thì HAS-A là lựa chọn tốt nhất.
+- Tính kế thừa nên chỉ được sử dụng nếu mqh IS-A được duy trì thông qua suốt vòng đời của đối tượng có liên quan, nếu không thì quan hệ HAS-A là lựa chọn tốt nhất.
 
 
 
