@@ -2,41 +2,41 @@
 
 ## Mục Lục
 
-[1. Định nghĩa cơ bản](#Dinhnghiacoban)
+[1. Định nghĩa cơ bản](./Note%20.md#Dinhnghiacoban)
 
-[2. Cú pháp cơ bản trong Java](#CuphapcobantrongJava)
+[2. Cú pháp cơ bản trong Java](./Note%20.md#CuphapcobantrongJava)
 
-[3. JDK, JRE, JVM trong Java](#JDK,JRE,JVMtrongJava)
+[3. JDK, JRE, JVM trong Java](./Note%20.md#JDK,JRE,JVMtrongJava)
 
-[4. Các kiểu biến trong Java](#CackieubientrongJava)
+[4. Các kiểu biến trong Java](./Note%20.md#CackieubientrongJava)
 
-[5. Kiểu dữ liệu trong Java](#KieudulieutrongJava)
+[5. Kiểu dữ liệu trong Java](./Note%20.md#KieudulieutrongJava)
 
-[6. Toán tử trong Java](#ToantutrongJava)
+[6. Toán tử trong Java](./Note%20.md#ToantutrongJava)
 
-[7. Các kiểu vòng lặp](#Cackieuvonglap)
+[7. Các kiểu vòng lặp](./Note%20.md#Cackieuvonglap)
 
-[8. Lệnh if/else, switch/case](#Lenhif/else,switch/case)
+[8. Lệnh if/else, switch/case](./Note%20.md#Lenhif/else,switch/case)
 
-[9. Number trong Java](#NumbertrongJava)
+[9. Number trong Java](./Note%20.md#NumbertrongJava)
 
-[10. Character trong Java](#CharactertrongJava)
+[10. Character trong Java](./Note%20.md#CharactertrongJava)
 
-[11. Hướng đối tượng (OOP)](#Huongdoituong(OOP))
+[11. Hướng đối tượng (OOP)](./Note%20.md#Huongdoituong(OOP))
 
-[12. Nạp chồng phương thức trong Java](#NapchongphuongthuctrongJava)
+[12. Nạp chồng phương thức trong Java](./Note%20.md#NapchongphuongthuctrongJava)
 
-[13. Constructor trong Java](#ConstructortrongJava)
+[13. Constructor trong Java](./Note%20.md#ConstructortrongJava)
 
-[14. Từ khóa Static](#TukhoaStatic)
+[14. Từ khóa Static](./Note%20.md#TukhoaStatic)
 
-[15. Từ khóa this trong Java](#TukhoathistrongJava)
+[15. Từ khóa this trong Java](./Note%20.md#TukhoathistrongJava)
 
-[16. Tính kế thừa - Từ khóa extends và implenments](#Tinhkethua-Tukhoaextendsvaimplement)
+[16. Tính kế thừa - Từ khóa extends và implenments](./Note%20.md#Tinhkethua-Tukhoaextendsvaimplement)
 
-[17. Quan hệ HAS-A (tham chiếu) trong Java](#QuanheHAS-A(thamchieu)trongJava)
+[17. Quan hệ HAS-A (tham chiếu) trong Java](./Note%20.md#QuanheHAS-A(thamchieu)trongJava)
 
-[18. Ghi đè phương thức (Overriding)](#Ghidephuongthuc(Overriding))
+[18. Ghi đè phương thức (Overriding)](./Note%20.md#Ghidephuongthuc(Overriding))
 
 
     *1 file .java không giới hạn số class trong 1 file. Tuy nhiên trong 1 file chỉ được có duy nhất 1 public class.*
