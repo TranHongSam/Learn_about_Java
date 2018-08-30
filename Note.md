@@ -2,41 +2,41 @@
 
 ## Mục Lục
 
-[1. Định nghĩa cơ bản](#1)
+[1. Định nghĩa cơ bản](#Dinhnghiacoban)
 
-[2. Cú pháp cơ bản trong Java](#2)
+[2. Cú pháp cơ bản trong Java](#CuphapcobantrongJava)
 
-[3. JDK, JRE, JVM trong Java](#3)
+[3. JDK, JRE, JVM trong Java](#JDK,JRE,JVMtrongJava)
 
-[4. Các kiểu biến trong Java](#4)
+[4. Các kiểu biến trong Java](#CackieubientrongJava)
 
-[5. Kiểu dữ liệu trong Java](#5)
+[5. Kiểu dữ liệu trong Java](#KieudulieutrongJava)
 
-[6. Toán tử trong Java](#6)
+[6. Toán tử trong Java](#ToantutrongJava)
 
-[7. Các kiểu vòng lặp](#7)
+[7. Các kiểu vòng lặp](#Cackieuvonglap)
 
-[8. Lệnh if/else, switch/case](#8)
+[8. Lệnh if/else, switch/case](#Lenhif/else,switch/case)
 
-[9. Number trong Java](#9)
+[9. Number trong Java](#NumbertrongJava)
 
-[10. Character trong Java](#10)
+[10. Character trong Java](#CharactertrongJava)
 
-[11. Hướng đối tượng (OOP)](#11)
+[11. Hướng đối tượng (OOP)](#Huongdoituong(OOP))
 
-[12. Nạp chồng phương thức trong Java](#12)
+[12. Nạp chồng phương thức trong Java](#NapchongphuongthuctrongJava)
 
-[13. Constructor trong Java](#13)
+[13. Constructor trong Java](#ConstructortrongJava)
 
-[14. Từ khóa Static](#14)
+[14. Từ khóa Static](#TukhoaStatic)
 
-[15. Từ khóa this trong Java](#15)
+[15. Từ khóa this trong Java](#TukhoathistrongJava)
 
-[16. Tính kế thừa - Từ khóa extends và implenments](#16)
+[16. Tính kế thừa - Từ khóa extends và implenments](#Tinhkethua-Tukhoaextendsvaimplement)
 
-[17. Quan hệ HAS-A (tham chiếu) trong Java](#17)
+[17. Quan hệ HAS-A (tham chiếu) trong Java](#QuanheHAS-A(thamchieu)trongJava)
 
-[18. Ghi đè phương thức (Overriding)](#18)
+[18. Ghi đè phương thức (Overriding)](#Ghidephuongthuc(Overriding))
 
 
     *1 file .java không giới hạn số class trong 1 file. Tuy nhiên trong 1 file chỉ được có duy nhất 1 public class.*
