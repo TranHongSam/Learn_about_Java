@@ -2,48 +2,50 @@
 
 ## Mục Lục
 
-[1. Định nghĩa cơ bản](./Note%20.md#Dinhnghiacoban)
+[1. Định nghĩa cơ bản](#Dinhnghiacoban)
 
-[2. Cú pháp cơ bản trong Java](./Note%20.md#CuphapcobantrongJava)
+[2. Cú pháp cơ bản trong Java](#CuphapcobantrongJava)
 
-[3. JDK, JRE, JVM trong Java](./Note%20.md#JDK,JRE,JVMtrongJava)
+[3. JDK, JRE, JVM trong Java](#JDK,JRE,JVMtrongJava)
 
-[4. Các kiểu biến trong Java](./Note%20.md#CackieubientrongJava)
+[4. Các kiểu biến trong Java](#CackieubientrongJava)
 
-[5. Kiểu dữ liệu trong Java](./Note%20.md#KieudulieutrongJava)
+[5. Kiểu dữ liệu trong Java](#KieudulieutrongJava)
 
-[6. Toán tử trong Java](./Note%20.md#ToantutrongJava)
+[6. Toán tử trong Java](#ToantutrongJava)
 
-[7. Các kiểu vòng lặp](./Note%20.md#Cackieuvonglap)
+[7. Các kiểu vòng lặp](#Cackieuvonglap)
 
-[8. Lệnh if/else, switch/case](./Note%20.md#Lenhif/else,switch/case)
+[8. Lệnh if/else, switch/case](#Lenhif/else,switch/case)
 
-[9. Number trong Java](./Note%20.md#NumbertrongJava)
+[9. Number trong Java](#NumbertrongJava)
 
-[10. Character trong Java](./Note%20.md#CharactertrongJava)
+[10. Character trong Java](#CharactertrongJava)
 
-[11. Hướng đối tượng (OOP)](./Note%20.md#Huongdoituong(OOP))
+[11. Hướng đối tượng (OOP)](#Huongdoituong(OOP))
 
-[12. Nạp chồng phương thức trong Java](./Note%20.md#NapchongphuongthuctrongJava)
+[12. Nạp chồng phương thức trong Java](#NapchongphuongthuctrongJava)
 
-[13. Constructor trong Java](./Note%20.md#ConstructortrongJava)
+[13. Constructor trong Java](#ConstructortrongJava)
 
-[14. Từ khóa Static](./Note%20.md#TukhoaStatic)
+[14. Từ khóa Static](#TukhoaStatic)
 
-[15. Từ khóa this trong Java](./Note%20.md#TukhoathistrongJava)
+[15. Từ khóa this trong Java](#TukhoathistrongJava)
 
-[16. Tính kế thừa - Từ khóa extends và implenments](./Note%20.md#Tinhkethua-Tukhoaextendsvaimplement)
+[16. Tính kế thừa - Từ khóa extends và implenments](#Tinhkethua-Tukhoaextendsvaimplement)
 
-[17. Quan hệ HAS-A (tham chiếu) trong Java](./Note%20.md#QuanheHAS-A(thamchieu)trongJava)
+[17. Quan hệ HAS-A (tham chiếu) trong Java](#QuanheHAS-A(thamchieu)trongJava)
 
-[18. Ghi đè phương thức (Overriding)](./Note%20.md#Ghidephuongthuc(Overriding))
+[18. Ghi đè phương thức (Overriding)](#Ghidephuongthuc(Overriding))
+
+[19. Kiểu trả về covariant trong Java](#KieutravecovarianttrongJava)
 
 
     *1 file .java không giới hạn số class trong 1 file. Tuy nhiên trong 1 file chỉ được có duy nhất 1 public class.*
 
     *Phân biệt chữ hoa và chữ thường*
 
-<a name="1. Định nghĩa cơ bản"></a>
+<a name="Dinhnghiacoban"></a>
 
 **1. Định nghĩa cơ bản**
 
@@ -52,7 +54,7 @@
 - Phương thức: 1 phương thức đơn giản là 1 hành vi. Một lớp có thể bao gồm nhiều phương thức. Trong mỗi phương thức có những phép toán logic, dữ liệu được xử lý và tất cả các hành động được thực thi.
 - Biến: mỗi đối tượng có một tập các biến duy nhất. Mỗi trạng thái của đối tượng được khởi tạo bởi giá trị và gán với những biến.
 
-<a name="2. Cú pháp cơ bản trong Java"></a>
+<a name="CuphapcobantrongJava"></a>
 
 **2. Cú pháp cơ bản trong Java**
 
@@ -76,14 +78,14 @@
 - Tính kế thừa trong java: khi muốn tạo 1 class mới mà đã có sẵn 1 class có 1 số đoạn code cần cho class mới, thì class mới có thể suy ra từ code đã tồn tại. Class đang tồn tại gọi là superclass, class được suy ra là subclass.
 - Lệnh print và println: print giữ nguyên vị trí con trỏ trên cùng 1 dòng lệnh, println di chuyển con trỏ xuống dòng tiếp theo.
 
-<a name="3. JDK, JRE, JVM trong Java"></a>
+<a name="JDK,JRE,JVMtrongJava"></a>
 
 **3. JDK, JRE, JVM trong Java**
 - JVM (Java Virtual Machine) là 1 máy ảo giúp máy tính chạy các chương trình Java. JVM thực hiện: tải code, kiểm tra code, thực thi code, cung cấp môi trường runtime.
 - JRE (Java Runtime Environment) sử dụng để cung cấp môi trường runtime. JRE bao gồm  tập hợp các thư viện và các file khác mà JVM sử dụng tại runtime.
 - JDK (Java Development Kit) bao gồm JRE và các Development Tool.
 
-<a name="4. Các kiểu biến trong Java"></a>
+<a name="CackieubientrongJava"></a>
 
 **4. Các kiểu biến trong Java**
 
@@ -105,7 +107,7 @@
 - Chỉ có một bản sao của mỗi biến class cho mỗi lớp dù có bao nhiêu đối tượng được tạo từ nó.
 - Các biến static hiếm khi được sử dụng ngoài việc được khai báo như là các hằng số.
 
-<a name="5. Kiểu dữ liệu trong Java"></a>
+<a name="KieudulieutrongJava"></a>
 
 **5. Kiểu dữ liệu trong Java**
 - Có 2 kiểu dữ liệu có sẵn trong Java: Các kiểu dữ liệu gốc (Primitive); Các kiểu dữ liệu tham chiếu/đối tượng (không phải kiểu gốc Non-primitive).
@@ -136,7 +138,7 @@
 
     literal: biểu diễn 1 giá trị cố định.
 
-<a name="6. Toán tử trong Java"></a>
+<a name="ToantutrongJava"></a>
 
 **6. Toán tử trong Java**
 - Toán tử số học: + - * / % ++ --
@@ -159,7 +161,7 @@
 
 <img src="https://2.pik.vn/2018b3112751-08df-4367-b296-0360eaee352d.jpg">
 
-<a name="7. Các kiểu vòng lặp"></a>
+<a name="Cackieuvonglap"></a>
 
 **7. Các kiểu vòng lặp**
 
@@ -167,14 +169,14 @@
 
 <img src="https://2.pik.vn/201828bccadc-4914-4c48-9b15-3474d1696f8e.jpg">
 
-<a name="8. Lệnh if/else, switch/case"></a>
+<a name="Lenhif/else,switch/case"></a>
 
 
 **8. Lệnh if/else, switch/case**
 
 <img src="https://2.pik.vn/2018a8010fc3-bc3d-4084-8728-d52a9fd35570.jpg">
 
-<a name="9. Number trong Java"></a>
+<a name="NumbertrongJava"></a>
 
 **9. Number trong Java**
 - Khi làm việc với Number, chúng ta sử dụng các kiểu dữ liệu gốc như byte, int, long, double,...
@@ -190,7 +192,7 @@
 
 <img src="https://2.pik.vn/201855e857f0-8cac-4ad5-b441-257cc35f721b.jpg">
 
-<a name="10. Character trong Java"></a>
+<a name="CharactertrongJava"></a>
 
 **10. Character trong Java**
 - Khi làm việc với ký tự, sử dụng kiểu dữ liệu char gốc.
@@ -204,7 +206,7 @@
 
 <img src="https://2.pik.vn/20187f2bcb25-95ef-4db6-9dad-90fc98c9ebbe.jpg">
 
-<a name="11. Hướng đối tượng (OOP)"></a>
+<a name="Huongdoituong(OOP)"></a>
 
 **11. Hướng đối tượng (OOP)**
 - Đối tượng (Object): là thực thể mang tính vật lý và logic, đối tượng có trạng thái và hành vi.
@@ -246,7 +248,7 @@
 - Các tham số biến (var-args): khả năng truyền một số các tham số biến cùng kiểu tới một phương thức, tham số trong phương thức được khai báo như sau: tenKieu... tenThamSo 
 - Phương thức finalize() trong Java: định nghĩa một phương thức mà sẽ được gọi ngay trước khi hủy 1 đối tượng, có thể được sử dụng để chắc chắn rằng 1 đối tượng hoàn toàn kết thúc.
 
-<a name="12. Nạp chồng phương thức trong Java"></a>
+<a name="NapchongphuongthuctrongJava"></a>
 
 **12. Nạp chồng phương thức trong Java**
 - Nạp chồng phương thức (Method Overloading) là một lớp có nhiều phương thức cùng tên nhưng có số tham số khác nhau.
@@ -260,7 +262,7 @@
 Trong sơ đồ trên, byte có thể được promote thành short, int, long, float, double. Kiểu short có thể được promote thành int,long, float, double. Kiểu char có thể được promote thành int, float, long, double...
 - Overload: 2 hay nhiều hàm cùng tên mà khác số lượng tham số hoặc khác kiểu tham số.
 
-<a name="13. Constructor trong Java"></a>
+<a name="ConstructortrongJava"></a>
 
 **13. Constructor trong Java**
 - 1 constructor khởi tạo 1 đối tượng khi nó được tạo. Nó cùng tên với lớp của nó và cú pháp tương tự như 1 phương thức, tuy nhiên các constructor không có kiểu trả về rõ ràng. Một nét đặc trưng là, bạn sẽ sử dụng một constructor để cung cấp các giá trị khởi tạo tới các biến instance được định nghĩa bởi lớp, hoặc để thực thi bất kỳ thủ tục khởi đầu nào khác được yêu cầu để tạo một đối tượng theo mẫu. Tất cả các lớp đều có các constructor, dù bạn có hay không định nghĩa nó, bởi vì Java tự động cung cấp một constructor mặc định mà khởi tạo tất cả biến thành viên về zero. Tuy nhiên, một khi bạn định nghĩa constructor cho riêng bạn, thì constructor mặc định sẽ không còn được sử dụng nữa. Thường thì, bạn sẽ cần một constructor mà chấp nhận một hoặc nhiều tham số. Các tham số được thêm tới một constructor theo cách tương tự như chúng được thêm tới một phương thức, vừa khai báo chúng bên trong dấu ngoặc đơn ở sau tên của constructor.
@@ -301,7 +303,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Constructor trả về giá trị, đó là instance(sự thể hiện) của lớp hiện tại, bạn không thể sử dụng kiểu trả về tuy vậy nó trả về một giá trị.
 - Constructor có thực hiện các tác vụ khác ngoài khởi tạo. Giống như quá trình tạo đối tượng, bắt đầu một Thread, gọi phương thức,... bạn có thể thực hiện bất cứ hoạt động nào trong Constructor như khi bạn thực hiện trong phương thức.
 
-<a name="14. Từ khóa Static"></a>
+<a name="TukhoaStatic"></a>
 
 **14. Từ khóa Static**
 - Sử dụng để quản lý bộ nhớ.
@@ -319,7 +321,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Khối static trong Java: được sử dụng để khởi tạo thành viên dữ liệu static, nó được thực thi trước phương thức main tại thời gian tải lớp.
 - Có thể thực thi 1 chương trình mà không có phương thức main(), một trong các cách là khối static trong phiên bản trước của JDK, không trong JDK 1.7.
 
-<a name="15. Từ khóa this trong Java"></a>
+<a name="TukhoathistrongJava"></a>
 
 **15. Từ khóa this trong Java**
 - Trong Java, this là một biến tham chiếu mà tham chiếu tới đối tượng hiện tại.
@@ -337,7 +339,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 
     SD để trả về instance của lớp hiện tại.
 
-<a name="16. Tính kế thừa - Từ khóa extends và implenments"></a>
+<a name="Tinhkethua-Tukhoaextendsvaimplement"></a>
 
 **16. Tính kế thừa - Từ khóa extends và implenments**
 - Tính kế thừa trong Java là một kỹ thuật mà trong đó 1 đối tượng thu được tất cả thuộc tính và hành vi của đối tượng cha.
@@ -370,7 +372,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 
 *Lớp final là lớp không thể kế thừa* 
 
-<a name="17. Quan hệ HAS-A (tham chiếu) trong Java"></a>
+<a name="QuanheHAS-A(thamchieu)trongJava"></a>
 
 **17. Quan hệ HAS-A (tham chiếu) trong Java** 
 - Có những quan hệ chủ yếu dựa vào cách sử dụng, nó xác định có hay không 1 lớp cụ thể HAS-A, quan hệ này giúp chúng ta giảm được dư thừa trong code cũng như tránh các bug.
@@ -379,7 +381,7 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Tính kế thừa nên chỉ được sử dụng nếu mqh IS-A được duy trì thông qua suốt vòng đời của đối tượng có liên quan, nếu không thì quan hệ HAS-A là lựa chọn tốt nhất.
 - VD: lớp Employee có 1 đối tượng là Address, đối tượng này chứa thông tin riêng như city, state, country,... còn lớp Employee chứa các thông tin chung như id, name...
 
-<a name="18. Ghi đè phương thức (Overriding)"></a>
+<a name="Ghidephuongthuc(Overriding)"></a>
 
 **18. Ghi đè phương thức (Overriding)**
 - Nếu lớp con có cùng phương thức như đã được khai báo trong lớp cha thì đó là Overriding.
@@ -392,9 +394,28 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 
 <img src="https://2.pik.vn/2018f77a2a7a-bae3-4752-9819-3af3a85dd171.jpg">
 
-<a name="19. Kiểu trả về covariant trong Java"></a>
+<a name="KieutravecovarianttrongJava"></a>
 
 **19. Kiểu trả về covariant trong Java**
+- Kiểu trả về covariant xác định rằng kiểu trả về có thể thay đổi trong lớp con, tức là một phương thức có thể trả về kiểu hẹp hơn khi phương thức đó được override ở class con.
+- Có thể ghi đè phương thức bằng cách thay đổi kiểu trả về nếu lớp con ghi đè bất cứ phương thức nào mà có kiểu trả về là không phải kiểu gốc.
+
+<a name="Tukhoasuper"></a>
+
+**20. Từ khóa super**
+- Từ khóa super trong java là 1 biến tham chiếu được sd để tham chiếu đến đối tượng lớp cha gần nhất; bất cứ khi nào tạo instance của lớp con, 1 instance của lớp cha được tạo ngầm định, được tham chiếu bởi biến super.
+- Sự sd từ khóa super trong Java: super được sử dụng để tham chiếu biến instance của lớp cha gần nhất; super() đc sd để triệu hồi Constructor của lớp cha gần nhất; super được sử dụng để triệu hồi phương thức của lớp cha gần nhất.
+- super được sử dụng để tham chiếu biến instance của lớp cha gần nhất: khi 2 lớp cha và con có cùng thuộc tính chung, biến instance của lớp con được tham chiếu bởi instance theo mặc định, nhưng mình phải tham chiếu đến biến instance của lớp cha,nên dùng từ khóa super để phân biệt giữa biến instance của lớp cha và lớp con.
+- super() đc sd để triệu hồi Constructor của lớp cha gần nhất: super() được tự động thêm vào trong mỗi Constructor của lớp bởi Compiler. Constructor mặc định được cung cấp bởi Compiler nhưng nó cũng thêm super() cho lệnh đầu tiên. Nếu bạn đang tạo constructor cho riêng mình và bạn không có this() hoặc super() như là lệnh đầu tiên, thì Compiler sẽ cung cấp super() như là lệnh đầu tiên của Constructor đó.
+- super được sử dụng để triệu hồi phương thức của lớp cha gần nhất, nó nên được sd trong lớp con mà có chứa cùng phương thức như lớp cha.
+
+<a name="Tukhoafinal"></a>
+
+**21. Từ khóa final**
+- Từ khóa final trong Java được sử dụng để hạn chế người dùng; nó có thể được sử dụng trong nhiều ngữ cảnh: với biến, với phương thức, với lớp.
+- Có thể áp dụng với các biến, 1 biến final không có giá trị nào là biến final trống hoặc biến final không được khởi tạo; nó chỉ có thể được khởi tạo trong COnstructor; biến final trống cũng có thể là static mà sẽ chỉ được khởi tạo trong khối static.
+- Nếu tạo bất cứ biến nào là final, sẽ không thể thay đổi giá trị của biến final(là hằng số).
+
 
 
 
