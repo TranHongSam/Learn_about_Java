@@ -415,7 +415,13 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Từ khóa final trong Java được sử dụng để hạn chế người dùng; nó có thể được sử dụng trong nhiều ngữ cảnh: với biến, với phương thức, với lớp.
 - Có thể áp dụng với các biến, 1 biến final không có giá trị nào là biến final trống hoặc biến final không được khởi tạo; nó chỉ có thể được khởi tạo trong COnstructor; biến final trống cũng có thể là static mà sẽ chỉ được khởi tạo trong khối static.
 - Nếu tạo bất cứ biến nào là final, sẽ không thể thay đổi giá trị của biến final(là hằng số).
-
+- Phương thức final trong Java: nếu tạo bất cứ phương thức nào là final, thì không thể ghi đè nó.
+- Lớp final trong Java: nếu tạo bất cứ lớp nào là final thì không thể kế thừa nó.
+- Phương thức final có được kế thừa nhưng không thể ghi đè.
+- Biến final không được khởi tạo tại thời điểm khai báo được gọi là biến final trống. Nếu muốn tạo 1 biến mà được khởi tạo tại thời điểm tạo đối tượng và 1 khi nó đã được khởi tạo thì không thể bị thay đổi, thì biến final trống là hữu ích trong trường hợp này. Biến final trống chỉ có thể khởi tại trong Constructor.
+- Biến static final không đc khởi tạo tại thời điểm khai báo thì đó là biến static final trống, nó chỉ có thể đc khởi tạo trong khối static.
+- Tham số final: nếu khai báo bất cứ tham số nào là final thì không thể thay đổi giá trị của nó.
+- Không thể khai báo 1 constructor final thì constructor không bao giờ được kế thừa.
 
 
 
