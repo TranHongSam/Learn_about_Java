@@ -423,8 +423,61 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Tham số final: nếu khai báo bất cứ tham số nào là final thì không thể thay đổi giá trị của nó.
 - Không thể khai báo 1 constructor final thì constructor không bao giờ được kế thừa.
 
+<a name="TinhdahinhtrongJava"></a>
 
+**22. Tính đa hình trong Java**
+- Đa hình là 1 khái niệm mà có thể thực hiện 1 hành động đơn theo nhiều cách khác nhau. Có 2 kiểu đa hình trong Java: đa hình tại compile time (nạp chồng phương thức) và đa hình runtime (ghi đè phương thức).
+- Cần phải biết có cách nào truy cập 1 đối tượng qua các biến tham chiếu? Một biến tham chiếu có thể chỉ là 1 kiểu. Khi được khai báo, kiểu của biến tham chiếu này không thể thay đổi.
+- Biến tham chiếu có thể được gán cho các đối tượng khác cung cấp mà không được khai báo final. Kiểu của biến tham chiếu sẽ xác định phương thức mà có thể đc triệu hồi trên đối tượng.
+- Một biến tham chiếu có thể được hướng đến bất kỳ đối tượng với kiểu khai báo hoặc bất kỳ kiểu con nào của biến khai báo. Một biến tham chiếu có thể khai báo như là 1 class hoặc interface.
+- Đa hình tại runtime trong Java: là 1 tiến trình trong đó 1 lời gọi tới 1 phương thức được ghi đè đưuọc xử lý tại runtime thay vì tại compile time. Trong tiến trình này, 1 phương thức được ghi đè được gọi thông qua biến tham chiếu của 1 lớp cha; việc quyết định phương thức được gọi dựa trên đối tượng nào đang đc tham chiếu bởi biến tham chiếu.
+- Upcasting: khi biến tham chiếu của lớp cha tham chiếu tới đối tượng  của lớp con thì đó là Upcasting.
 
+    VD: 
+
+    class A{}
+
+    class B extends A{}
+
+    A a=new B();//đây là upcasting
+
+- Đa hình tại runtime trong Java với thành viên dữ liệu: phương thức bị ghi đè không là thành viên dữ liệu vì thế đa hình tại runtime không thể có được bởi thành viên dữ liệu.
+
+<a name="Gankettinhvaganketdong(DynamicBinding)"></a>
+
+**23. Gắn kết tĩnh và Gắn kết động (Dynamic Binding)**
+- Binding (gắn kết) là kết nối 1 lời gọi phương thức tới thân phương thức.
+- Có 2 kiểu Binding là: Static Binding và Dynamic Binding (late binding).
+- Khái niệm Type: 
+
+    1. Biến có 1 kiểu, nó có thể là kiểu gốc hoặc kiểu khác (không phải kiểu gốc): int data=30; //biến data kiểu int
+
+    2. Tham chiếu có 1 kiểu:
+
+        class Dog{
+
+            public static void main(String args[])
+
+            Dog d1;//d1 là kiểu của Dog }
+
+    3. Đối tượng có 1 kiểu. Đối tượng là 1 instance của lớp java cụ thể, nhưng nó cũng là 1 instance của lớp cha.
+
+        class Animal{}
+
+        class Dog extends Animal{
+
+            public static void main(String args[])
+
+            {Dog d1=new Dog();}//d1 là 1 instance của lớp Dog nhưng nó cũng là 1 instance của Animal
+
+        }
+
+- Static Binding: khi kiểu của đối tượng được quyết định tại compile time thì đó là static binding. Nếu có bất cứ phương thức private, final hoặc static nào trong 1 lớp thì đó là static binding. Do đó không thể ghi đè kết quả với lập trình hướng đối tượng trong Static Binding.
+- Dynamic Binding: khi kiểu của đối tượng được quyết định tại runtimr thì đó là Dynamic Binding.
+
+<a name="ToantuInstanceof"></a>
+
+**24. Toán tử Instanceof**
 
 
 
