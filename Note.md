@@ -478,17 +478,114 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 <a name="ToantuInstanceof"></a>
 
 **24. Toán tử Instanceof**
+- Dùng để kiểm tra xem đối tượng có là instance của kiểu cụ thể: lớp hoặc lớp con hoặc interface hay không.
+- Toán tử instanceof còn đc biết đến như là toán tử so sánh kiểu bỏi nó so sánh instance với kiểu, nó trả về true hoặc false.
+
+    class Simple{
+
+        public static void main(Sring args[]){
+
+            Simple s=new Simple();
+
+            System.out.println(s instanceof Simple); //true
+        }
+    }
+
+- Một đối tượng của kiểu lớp con cũng là 1 kiểu của lớp cha. VD: nếu Dog kế thừa Animal thì đối tượng của Dog có thể được tham chiếu bởi lớp Dog hoặc lớp Animal.   
+- Nếu áp dụng toán tử instanceof với bất cứ biến nào có giá trị null, thì nó trả về false.
+- Downcasting với toán tử instanceof trong Java: khi kiểu lớp con tham chiếu tới đối tượng của lớp cha thì đó là downcasting. Nếu thực hiện trực tiếp, Compiler sẽ cho 1 lỗi biên dịch. Nếu thực hiện bởi typecasting (ép kiểu) thì ClassCasrException được ném tại runtime. Nhưng nếu sử dụng toán tử instanceof thì downcasting là có thể.
+
+    Dog d=new Animal(); gây lỗi tại thời gian biên dịch vì Dog là lớp con của Animal
+
+    Dog d=(Dog)new Animal(); //biên dịch thành công nhưng ClassCastException bị ném tại runtime
+
+<a name="TinhTruuTuong"></a>
+
+**25. Tính trừu tượng**
+- Tính trừu tượng trong Java hướng đến khả năng tạo một đối tượng trừu tượng trong lập trình hướng đối tượng. Một lớp trừu tượng là 1 lớp không được khởi tạo. Tất cả các chức năng khác của lớp vẫn tồn tại, và tất cả các trường, phương thức, và hàm khởi tạo đều được truy cập với 1 cách giống nhau. Bạn không thể tạo một đối tượng với 1 lớp trừu tượng hóa.
+- Nếu 1 lớp là lớp trừu tượng và nó không được khởi tạo, lớp này không được sử dụng trừ khi nó là lớp con.
+- Lớp Abstract: sử dụng từ khóa abstract để khai báo 1 lớp abstract, từ khóa này xuất hiện trước từ khóa class trong khai báo lớp.
+- Phương thức Abstract: nếu muốn 1 lớp chứa 1 phương thức cụ thể nhưng muốn triển khai thực sự phương thức đó để đưuọc quyết định bởi các lớp con thì có thể khai báo phương thức đó trong lớp cha dạng abstract. Từ khóa abstract được sử dụng để khai báo 1 phương thức dạng abstract. Một phương thức gồm 1 chữ số, không có thân phương thức. Phương thức abstract sẽ không có định nghĩa, chữ số của nó được theo sau bởi dấu chấm phảy, không có dấu ngoặc móc ôm theo sau.
+- Khai báo 1 phương thức dạng abstract tạo 2 kết quả:
+
+    1. Lớp phải được khai báo abstract, nếu 1 lớp chứa 1 phương thức abstract thì lớp đó cũng phải là abstract.
+
+    2. Bất kỳ lớp con nào phải hoặc override phương thức abstract hoặc khai báo abstract chính nó.
+
+- Một lớp con mà kế thừa 1 phương thức abstract phải ghi đè nó. Nếu nó không thì nó phải là abstract và bất kỳ lớp con nào của chúng phải override nó.
+- Một lớp con phải triển khai phương thức abstract nếu không bạn sẽ có 1 cấu trúc phân cấp của các lớp abstract mà không thể được khởi tạo.
+
+<a name="AbstractClass"></a>
+
+**26. Abstract Class**
+- Tính trừu tượng là 1 tiến trình ẩn các chi tiết trìn triển khai và chỉ hiện thị tính năng tới người dùng, nó chỉ hiển thị các thức quan trọng tới người dùng và ẩn các chi tiết nội tại. Tính trừu tượng giúp bạn trọng tâm hơn vào đối tượng thay vì quan tâm đến cách nó thực hiện.
+- Một lớp được khai báo là abstract thì đó là lớp trừu tượng, nó cần được kế thừa và phương thức của nó được triển khai, nó không thể được khởi tạo.
+
+    abstract class A{}
+
+- Phương thức được khai báo là abstract và không có trình triển khai thì đó là phương thức trừu tượng. Phương thức abstract không có thân phương thức, không có định nghĩa, được theo sau bởi dấu chấm phảy, không có dấu ngoặc móc ôm theo sau
+
+    abstract void printStatus();
+
+- Lớp trừu tượng có thành viên dữ liệu, phương thức trừu tượng, constructor và có thể cả phương thức main().
+- Nếu bạn đang kế thừa bất cứ lớp trừu tượng nào mà có phương thức trừu tượng, thì bạn phải cung cấp trình triển khai của các phương thức của lớp trừu tượng này.
+- Lớp trừu tượng cũng có thể được sử dụng để cung cấp một số trình triển khai của Interface. Trong tình huống này, người dùng cuối cùng không thể bị bắt buộc phải ghi đè tất cả phương thức của Interface đó.
+- Các phương thức của interface là abstract 100%, trong abstract class có thể có phương thức không phải abstract. Trong thiết kế phần mềm, interface thường được dùng để chỉ 2 hay nhiều class cùng làm việc gì đó, trong khi abstract class thường hướng đến quan hệ cha-con trong lập trình hướng đối tượng.
+
+<a name="Interface"></a>
+
+**27. Interface**
+- Interface là một kỹ thuật để thu được tính trừu tượng hoàn toàn và đa kế thừa trong Java. Interface trong Java cũng biễu diễn mối quan hệ IS-A. Nó không thể được khởi tạo giống như lớp trừu tượng.
+- Các trường của Interface là public, static và final theo mặc định và các phương thức là public và abstract.
+- Một Interface trong Java là một tập hợp các phương thức trừu tượng (abstract). 
+- Một interface không phải là một lớp. Một lớp mô tả các thuộc tính và hành vi của một đối tượng. Một interface chứa các hành vi mà một class triển khai.
+- Trừ khi một lớp triển khai interface là lớp trừu tượng abstract, còn lại tất cả các phương thức của interface cần được định nghĩa trong class.
+- Khi ghi đè các phương thức được định nghĩa trong interface, có một số qui tắc sau:
+
+    Các checked exception không nên được khai báo trong phương thức implements, thay vào đó nó nên được khai báo trong phương thức interface hoặc các lớp phụ được khai báo bởi phương thức interface.
+
+    Signature (ký số) của phương thức interface và kiểu trả về nên được duy trì khi ghi đè phương thức (overriding method).
+
+    Một lớp triển khai chính nó có thể là abstract và vì thế các phương thức interface không cần được triển khai.
+
+- Khi triển khai interface, có vài quy tắc sau:
+
+    Một lớp có thể triển khai một hoặc nhiều interface tại một thời điểm.
+
+    Một lớp chỉ có thể kế thừa một lớp khác, nhưng được triển khai nhiều interface.
+
+    Một interface có thể kế thừa từ một interface khác, tương tự cách một lớp có thể kế thừa lớp khác.
+
+- Phân biệt lớp abstract và interface: cả lớp abstract và interface đc sử dụng để thu đc tính trừu tượng, từ đó chúng ta có thể khai báo các phương thức trừu tượng. Cả lớp trừu tượng bà interface không thể được khởi tạo. Nhưng cũng có các điểm khác nhau giữa lớp trừu tượng và interface như sau:
+
+<img src="https://2.pik.vn/2018ee75c852-f174-404f-9ef3-608842788522.jpg">
 
 
+<a name="PackagetrongJava"></a>
 
+**28. Package trong Java**
+- Một package trong Java là một nhóm các kiểu lớp, Interface và package con tương tự nhau. Package trong Java có thể được phân loại thành: Package đã xây dựng sẵn và package do người dùng định nghĩa. Có nhiều package đã xây dựng sẵn như java, lang, awt, javax, swing, net, io, util, sql, … 
+- Package được sử dụng trong Java để ngăn cản việc xung đột đặt tên, điều khiên truy cập, giúp việc tìm kiếm/lưu trữ và sử dụng lớp, interface, enumeration, annotation dễ dàng hơn.
+- Một vài các package có sẵn trong Java như: java.lang (các lớp cơ bản), java.io (các lớp input và output cơ bản).
+- Lợi thế của package: đc sd để phân loại các lớp và các interface để chúng có thể được duy trì dễ dàng hơn; cung cấp bảo vệ truy cập; xóa bỏ các xung đột về đặt tên.
+- Từ khóa import trong Java: nếu 1 class sd 1 class khác cùng package, tên package không cần đc sd; lớp trong cùng package tìm thấy nhau mà không cần cú pháp đặc biệt nào.
+- VD: 1 lớp Boss đc thêm vào 1 package payroll đã chứ Employee. Lớp Boss có thể ám chỉ đến lớp Employee mà không cần sd tiền tố payroll. Nếu xảy ra trường hợp Boss không nằm trong payroll package, lớp Boss phải sd 1 trong những kỹ thuật sau thể tham chiếu đến class thuộc package khác:
 
+    payroll.Employee //sd tên đầy đủ of class có thể đc sd
 
+    import payroll.*; //Package có thể được nhập bởi sử dụng từ khóa import và wild card (*). 
 
+    import payroll.Employee; //1 class có thể import chính nó với từ khóa import
 
+- Một class file có thể chứa bất kỳ số lệnh import nào, lệnh import phải xuất hiện sau mỗi lệnh khai báo package và trước từ khóa khai báo lớp.
+- Cách truy cập package từ package khác: 
 
+    Sử dụng tenpackage.*: tất cả các lớp và interface của package này có thể truy cập, trừ các package con. Từ khóa import được sử dụng để làm cho các lớp và interface của package khác có thể truy cập tới package hiện tại.
 
+     Sd tenpackage.tenlop: chỉ có lớp đc khai báo của package này có thể truy cập.
 
+     Sd tên đầy đủ: chỉ có lớp đc khai báo của package này có thể truy cập. Bây giờ không cần import, nhưng cần sd tên đầy đủ mỗi khi đang truy cập lớp hoặc interface. Nói chung, nó đc sd khi 2 package cùng tên lớp.
 
-
+- Nếu import 1 package, thì tất cả các lớp và interface của package đó sẽ đc import ngoại trừ lớp và interface của package con. Do đó, cần phải import cả các package con.
 
 
