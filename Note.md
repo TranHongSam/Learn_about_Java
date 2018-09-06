@@ -588,4 +588,45 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 
 - Nếu import 1 package, thì tất cả các lớp và interface của package đó sẽ đc import ngoại trừ lớp và interface của package con. Do đó, cần phải import cả các package con.
 
+- Package con trong Java (subpackage) là package nằm bên trong package khác. Ví dụ: Sun Microsystem đã định nghĩa một package có tên là java chứa nhiều lớp như System, String, Reader, Writer, Socket, … Những lớp này biểu diễn một nhóm cụ thể, ví dụ như các lớp Reader và Writer là cho hoạt động I/O, các lớp Socket và ServerSocket là cho lập trình mạng, …. Vì thế, Sun đã lại phân loại java package thành các subpackage như lang, net, io, … và đặt các lớp liên quan tới IO vào io package, …
+
+<a name="CackieuModifier"></a>
+
+**29. Các kiểu Modifier**
+- Modifier là các từ khóa mà bạn thêm vào những định nghĩa để thay đổi ý nghĩa of chúng.
+- Có hàng loạt các modifier bao gồm: Access Modifier trong Java; Non-Access Modifier trong Java.
+- Để sử dụng 1 Modifier, bao từ khóa của nó trong định nghĩa của 1 lớp, phương thức hoặc biến. Modifier đặt trước phần còn lại của lệnh.
+- Access Modifier: Java cung cấp 1 số Access Modifier để thiết lập chỉ định truy cập cho các lớp, các biến, các phương thức và constructor. Có 4 mức độ truy cập là: Default (truy cập trong nội bộ package); Private (truy cập trong nội bộ lớp); Public (thành phần công khai, truy cập tự do từ bên ngoài); Protected (thành phần được bảo vệ, bị hạn chế truy cập từ bên ngoài).
+- Non-Access Modifier: Static Modifier (tạo các phương thức lớp và các biến); Final Modifier (kết thúc sự thi hành của các lớp, các phương thức và các biến); Abstract Modifier (tạo các lớp và các phương thức trừu tượng); Synchronized Modifier và Volatile Modifier (sử dụng cho các Thread).
+
+<a name="Non-AccessModifier"></a>
+
+**30. Non-Access Modifier**
+- Static Modifier: 
+
+    Biến static: từ khóa static đc sd để tạo các biến sẽ tồn tại 1 cách độc lập trong bất kỳ instance được tạo cho lớp đó. Chỉ có 1 bản sao biến static tồn tại cho dù có nhiều instance của lớp. Các biến static cũng đc biết đến như là các biến class. Các biến local không thể được khai báo là static.
+
+    Phương thức static: từ khóa static đc sd để tạo các phương thức sẽ tồn tại 1 cách độc lập trong bất kỳ instance được tạo cho lớp đó.
+
+- Final Modifier:
+
+    Biến final: 1 biến final có thể được khởi tạo 1 cách rõ ràng chỉ 1 lần. Một biến tham chiếu được khai báo final có thể không bao giờ được tái gán để tham chiếu tới 1 đối tượng khác. Tuy nhiên, dữ liệu trong đối tượng có thể bị thay đổi; vì thế trạng thái của đối tượng có thể bị thay đổi nhưng không phải là tham chiếu. Với các biến, final modifier thường đc sd với static để tạo 1 hằng số cho 1 biến class.
+
+    Phương thức final: 1 phương thức final không thể bị overriding bởi bất kỳ lớp phụ nào. Final Modifier ngăn cản 1 phương thức bị sửa đổi trong 1 lớp phụ. Mục đích chính của phương thức final là nội dung của phương thức không nên bị thay đổi bởi bên ngoài.
+
+    Lớp final: để ngăn cản lớp bị phân lớp thành lớp phụ. Nếu 1 lớp được đánh dấu là final, thì k có lớp nào có thể kế thừa bất kỳ đặc điểm nào từ lớp final đó.
+
+- Abstract Modifier:
+
+    Lớp abstract: nếu 1 lớp đc khai báo là abstract thì mục đích duy nhất cho lớp này là để kế thừa. Một lớp k thể vừa abstract vừa final. Một lớp abstract có thể chứa cả các phương thức abstract cũng như các phương thức thông thường.
+
+    Phương thức abstract: là phương thức đc khai báo mà không có bất kỳ sự triển khai nào. Thân phương thức này đc cung cấp bởi lớp phụ. Các phương thức abstract có thể không bao giờ là final. Bất kỳ lớp nào mà kế thừa một lớp abstract phải triển khai tất cả phương thức abstract của lớp cha, trừ khi lớp phụ này cũng là một lớp abstract. Nếu một lớp chứa một hoặc nhiều phương thức abstract, thì lớp đó phải được khai báo là abstract. Một lớp abstract không cần chứa các phương thức abstract. Phương thức abstract kết thúc với một dấu chấm phảy. Ví dụ: public abstract sample();
+
+- Synchronized Modifier: đc sd để chỉ rằng 1 phương thức có thể đc truy cập bởi chỉ 1 thread tại 1 thời điểm. Synchronized Modifier có thể đc áp dụng với bất kỳ 1 trong 4 mức độ Access Modifier nào.
+- Transient Modifier: 1 biến instance đc đánh dấu là transient để chỉ ràng JVM bỏ qua biến cụ thể khi xếp thứ tự đối tượng đang chứa nó. Modifier này đc bao trong lệnh mà tạo biến đó, đứng trước lớp hoặc kiểu dữ liệu của biến đó.
+- Volatile Modifier: đc sd để chỉ cho JVM biết 1 thread đang truy cập biến đó phải luôn luôn sát nhập bản sao biến private của riêng nó với bản sao master trong bộ nhớ. Truy cập 1 biến volatile đồng bộ tất cả bản sao của các biến trong bộ nhớ chính. Volatile chỉ có thể đc áp dụng tới các biến instance mà là kiểu đối tượng hoặc private. Một tham chiếu đối tượng Volatile có thể là null.
+
+
+
+
 
