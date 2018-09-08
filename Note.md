@@ -626,7 +626,112 @@ Trong sơ đồ trên, byte có thể được promote thành short, int, long, 
 - Transient Modifier: 1 biến instance đc đánh dấu là transient để chỉ ràng JVM bỏ qua biến cụ thể khi xếp thứ tự đối tượng đang chứa nó. Modifier này đc bao trong lệnh mà tạo biến đó, đứng trước lớp hoặc kiểu dữ liệu của biến đó.
 - Volatile Modifier: đc sd để chỉ cho JVM biết 1 thread đang truy cập biến đó phải luôn luôn sát nhập bản sao biến private của riêng nó với bản sao master trong bộ nhớ. Truy cập 1 biến volatile đồng bộ tất cả bản sao của các biến trong bộ nhớ chính. Volatile chỉ có thể đc áp dụng tới các biến instance mà là kiểu đối tượng hoặc private. Một tham chiếu đối tượng Volatile có thể là null.
 
+<a name="AccessModifier"></a>
 
+**31. Access Modifier**
+- Access Modifier xác định phạm vi có thể truy cập của thành viên dữ liệu, phương thức, constructor hoặc lớp.
 
+<img src="https://2.pik.vn/201809baa6c8-f956-424e-9c51-37cc902d1587.jpg">
 
+- Private Access Modifier: các phương thức, biến và constructor mà được khai báo private chỉ có thể đc truy cập trong chính lớp được khai báo đó; Lớp và interface không thể là private; Các biến được khai báo private có thể được truy cập bên ngoài lớp nếu phương thức public getter có mặt trong lớp đó; Sử dụng Private Access Modifier trong Java là cách chủ yếu để một đối tượng bao đóng chính nó và ẩn dữ liệu với bên ngoài.
+
+    Quy tắc: nếu tạo bất cứ constructor nào là private, thì không thể tạo instance của lớp đó từ bên ngoài lớp.
+
+- Default Access Modifier: không khai báo 1 cách rõ ràng 1 Access Modifier cho 1 lớp, trường, phương thức...Nói cách khác, nếu không sử dụng bất cứ Modifier nào, thì theo mặc định nó đc xem như là default. Default Modifier chỉ có thể truy cập bên trong package.
+
+    VD: tạo 2 package là pack và mypack. Lớp pack có class A. Chúng ta truy cập lớp A từ bên ngoài package của nó. Khi lớp A không public, thì nó k thể được truy cập từ bên ngoài package.
+
+- Protected Access Modifier: có thể truy cập bên trong package và bên ngoài package nhưng chỉ thông qua tính kế thừa. Protected Access Modifier có thể đc áp dụng trên thành viên dữ liệu nhưng không thể áp dụng trên lớp. Các biến, phương thức và constructor đc khai báo protected trong 1 lớp cha (superclass) chỉ đc truy cập bởi các lớp cha trong package khác hoặc bất kỳ lớp nào bên trong package đó của lớp đc protected.
+
+    Protected Access Modifier không thể được áp dụng cho lớp và interface. Các phương thức và trường có thể được khai báo protected, tuy nhiên, các phương thức và trường trong một interface không thể được khai báo là protected.
+
+    Chế độ protected cung cấp cho lớp phụ cơ hội để sử dụng phương thức hoặc biến helper, trong khi ngăn cản 1 lớp không liên quan từ việc cố gắng sử dụng nó.
+
+<img src="https://2.pik.vn/201837c3c55d-c06e-4107-b732-8ca34e6eed86.jpg">
+
+- Access Modifier với Overriding: Nếu đang ghi đè bất cứ phương thức nào, phương thức đc ghi đè (vd: đc khai báo trong lớp con) phải không nhiều giới hạn. Default Modifier nhiều giới hạn hơn Protected.
+
+- Access Modifier và tính kế thừa trong Java: các quy tắc bắt buộc cho các phương thức đc kế thừa:
+
+    Các phương thức đc khai báo public trong 1 lớp cha cũng phải public trong tất cả các lớp phụ.
+
+    Các phương thức đc khai báo protected trong 1 lớp cha phải là protected hoặc public trong các lớp phụ, không thể là private.
+
+    Các phương thức được khai báo mà không có điều khiển truy cập (không sd modifier nào) có thể đc khai báo private trong các lớp phụ.
+
+    Các phương thức đc khai báo private không đc kế thừa, do đó không có quy tắc nào cho chúng.
+
+<a name="Tinhbaodong"></a>
+
+**32. Tính bao đóng**
+- Tính bao đóng trong Java là 1 tiến trình đóng gói code và dữ liệu lại với nhau vào trong 1 đơn vị unit đơn.
+- Chúng ta có thể tạo một lớp được bao đóng hoàn toàn trong Java bằng việc tạo tất cả thành viên dữ liệu của lớp là private. Bây giờ, chúng ta sử dụng phương thức setter và getter để thiết lập và lấy dữ liệu trong nó. Lớp Java Bean là ví dụ về một lớp được bao đóng hoàn toàn.
+- Tính bao đóng là kỹ thuật tạo 1 trường của lớp private và cung cấp khả năng truy cập trường này qua các phương thức public. Nếu 1 trường đc khai báo private, nó không thể đc truy cập bởi bên ngoài lớp do đó có thể che dấu các trường có lớp này. Vì lý do này, tính bao đóng được ám chỉ như việc dấu dữ liệu (data hiding).
+- Tính bao đóng có thể được mô tả như là một tấm bảo vệ code để tránh code và dữ liệu của bạn bị truy cập một cách ngẫu nhiên bởi các code khác bên ngoài class. Truy cập dữ liệu và code được điều khiển một cách chặt chẽ bởi một interface.
+- Bởi cung cấp phương thức setter hoặc getter, bạn có thể làm cho lớp là read-only hoặc write-only. Nó cung cấp cho bạn sự điều khiển thông qua dữ liệu. Giả sử bạn muốn thiết lập giá trị của id là lớn hơn 100, thì bạn có thể viết biểu thức logic bên trong phương thức setter.
+- Tất cả các lớp có thể có chế độ chỉ đọc hoặc chỉ ghi (chỉ có hàm getter hoặc setter).
+- Một lớp có thể có toàn bộ điều khiển thông qua những gì được lưu giữ trong các trường của nó.
+- Người sử dụng của class không biết cách các class lưu trữ dữ liệu. Một class có thể thay đổi kiểu dữ liệu của một trường và người dùng class không cần sự thay đổi trong code.
+
+<a name="LopObjecttrongJava"></a>
+
+**33. Lớp Object trong Java**
+- Theo mặc định, lớp Object là lớp cha của tất cả các lớp trong Java; hay nó là lớp cao nhất của Java. Lớp Object là khá lợi ích nếu bạn muốn tham chiếu bất cứ đối tượng nào có kiểu mà bạn không biết. Chú ý rằng biến tham chiếu của lớp cha có thể tham chiếu tới đối tượng lớp con, và được gọi là Upcasting.
+- VD: phương thức getObject() mà trả về 1 đối tượng nhưng nó có thể là bất cứ kiểu nào như Employee, Student,...Chúng ta có thể sd tham chiếu lớp Object để tham chiếu tới đối tượng đó: Object obj=getObject(); //kb đối tượng nào sẽ đc trả về từ phương thức này
+- Lớp Object cung cấp 1 số hành vi chung cho tất cả các đối tượng, nhưn đối tượng có thể đc so sánh, có thể đc mô phỏng, thông báo,...
+
+<img src="https://2.pik.vn/2018577829ff-bd9d-48c7-b853-8dbba9924805.jpg">
+
+- Phương thức của lớp Object trong Java: 
+
+<img src="https://2.pik.vn/20181c8568b6-25bd-489f-8c95-f29ae095ad0a.jpg">
+
+<img src="https://2.pik.vn/20181c8568b6-25bd-489f-8c95-f29ae095ad0a.jpg">
+
+- Lớp Object là một lớp mặc định của Java và là lớp đặc biệt. Tất cả các class khác trong Java phải kế thừa nó. Nhưng để cho gọn chúng ta hay ẩn đi, ví dụ không cần viết class Student extends Object, thực tế là vẫn mặc định extends.
+
+<a name="Nhanbandoituong"></a>
+
+**34. Nhân bản đối tượng**
+- Nhân bản đối tượng là 1 cách để tạo 1 bản sao của đối tượng. Để thực hiện, sd phương thức clone(). Java.lang.Cloneable Interface phải được triển khai bởi lớp mà có đối tượng cần nhân bản chúng ta muốn tạo. Nếu bạn không triển khai Cloneable Interface, phương thức clone() sẽ tạo CloneNoSupportedException.
+- Phương thức clone() được định nghĩa trong lớp Object. Cú pháp:
+
+protected Object clone() throws CloneNotSupportedException
+
+- Phương thức clone() tiết kiệm các tiến trình xử lý phụ để tạo bản nhân bản của 1 đối tượng. Nếu thực hiện nó bởi từ khóa new, điều này sẽ tốn nhiều tiến trình xử lý hơn, và đó là lý do vì sao sd nhân bản đối tượng.
+- Phương thức clone() sao chép các giá trị của một đối tượng sang đối tượng khác. Do đó, chúng ta không cần viết code tường minh để sao chép giá trị từ đối tượng này sang đối tượng khác.
+- Nếu bạn tạo đối tượng khác với từ khóa new và gán giá trị của đối tượng khác cho nó, thì điều này tốn nhiều tiến trình xử lý hơn trên đối tượng này. Do đó để tiết kiệm các tiến trình xử lý phụ, chúng ta nên sử dụng phương thức clone().
+
+<a name="Mang(Array)"></a>
+
+**35. Mảng (Array)**
+- Mảng trong Java là 1 đối tượng chứa các phần tử có kiểu dữ liệu giống nhau. Nó là 1 cấu trúc dữ liệu, tại đó ta có thể lưu trữ các phần tử tương tự nhau. Chúng ta chỉ có thể lưu trữ 1 tập hợp cố định các phần tử trong 1 mảng trong Java.
+- Mảng trong Java là dựa trên chỉ mục (index), phần tử đầu tiên của mảng được lưu trữ tạo chỉ mục 0.
+- Lợi thế của mảng trong Java: tối ưu hóa code (có thể thu nhận và sắp xếp dữ liệu 1 cách dễ dàng); truy cập ngẫu nhiên (có thể lấy bất cứ dữ liệu nào tại bất cứ chỉ mục nào).
+- Hạn chế của mảng trong Java: giới hạn kích cỡ (chỉ có thể lưu trữ kích cỡ cố định số phần tử trong mảng). Để xử lý vấn đề này, Collection Framework đc sd trong Java.
+- Có 2 kiểu mảng trong Java: mảng 1 chiều, mảng đa chiều.
+- Khai báo biến mảng trong Java: 
+
+    kieu_du_lieu[] bien_tham_chieu_mang; //cách ưu tiên
+
+    kieu_du_lieu bien_tham_chieu_mang[]; //k phải cách ưu tiên
+
+- Tạo mảng trong Java: sử dụng toán tử new
+
+    bien_tham_chieu_mang = new kieu_du_lieu[kich_co_mang];
+
+    //tạo mảng bởi sd kiểu dữ liệu new kieu_du_lieu[kich_co_mang]; gán tham chiếu của mảng mới đc tạo tới biến bien_tham-chieu_mang
+
+- Khai báo 1 biến mảng, tạo 1 mảng, gán tham chiếu của mảng tới biến có thể đc tổ hợp trong 1 lệnh:
+
+    kieu_du_lieu[] bien_tham_chieu_mang = new kieu_du_lieu[kich_co_mang]
+
+    kieu_du_lieu[] bien_tham_chieu_mang = {giatri0, ...gaitriN}
+
+    vd: double[] a=new double[10];
+
+- Các phần tử mảng được truy cập thông qua index – chỉ mục. Chỉ mục của mảng được tính toán từ 0 tới (N-1).
+- Mảng 1 chiều trong Java: Khi xử lý các phần tử mảng, chúng ta thường sử dụng hoặc vòng lặp for hoặc vòng lặp foreach bởi vì tất cả phần tử trong một mảng là cùng kiểu và kích cỡ mảng đã biết.
+- Truyền mảng tới phương thức trong Java: có thể truyền mảng tới phương thức để tái sử dụng cùng tính logic của phương thức đó trên bất cứ mảng nào.
+- Mảng 2 chiều và đa chiều trong Java:
 
