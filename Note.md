@@ -733,5 +733,122 @@ protected Object clone() throws CloneNotSupportedException
 - Các phần tử mảng được truy cập thông qua index – chỉ mục. Chỉ mục của mảng được tính toán từ 0 tới (N-1).
 - Mảng 1 chiều trong Java: Khi xử lý các phần tử mảng, chúng ta thường sử dụng hoặc vòng lặp for hoặc vòng lặp foreach bởi vì tất cả phần tử trong một mảng là cùng kiểu và kích cỡ mảng đã biết.
 - Truyền mảng tới phương thức trong Java: có thể truyền mảng tới phương thức để tái sử dụng cùng tính logic của phương thức đó trên bất cứ mảng nào.
-- Mảng 2 chiều và đa chiều trong Java:
+- Mảng 2 chiều và đa chiều trong Java: dữ liêu đc lưu trữ trong hàng và cột dựa trên chỉ mục. Cú pháp:
+
+    kieu_du_lieu[][] bien_tham_chieu_mang;
+
+    kieu_du_lieu [][]bien_tham_chieu_mang;
+
+    kieu_du_lieu bien_tham_chieu_mang[][];
+
+    kieu_du_lieu []bien_tham_chieu_mang[];
+
+    vd: int[][] arr=new int[3][3]; //3 hàng và 3 cột
+
+- Tên lớp của mảng trong Java: trong java mảng là 1 đối tượng. Với đối tượng Array, 1 lớp ủy nhiệm đc tạo có tên có thể thu đc bởi phương thức getClass(), getName() trên đối tượng đó.   
+- Có thể sao chép 1 mảng này sang mảng khác bởi phương thức arraycopy của lớp System. Cú pháp:
+
+    public static void arraycopy(
+
+        Object src, int srcPos, Object dest, int destPos, int length
+
+    )
+
+- Cộng 2 ma trận trong Java
+- Lớp Array trong Java: lớp java.util.Arrays chứa nhiều phương thức static đa dạng để xếp thức tự và tìm kiếm các mảng, so sánh các mảng và điền các phần tử vào mảng.
+
+<img src="https://2.pik.vn/20180dc70f09-8ab7-44c6-a6f0-1cee6d2d52fd.jpg">
+
+<a name="LopWrapper"></a>
+
+**36. Lớp Wrapper**
+- Lớp Wrapper cung cấp kỹ thuật để chuyển đối kiểu gốc primitive thành đối tượng và từ đối tượng thành kiểu gốc. 
+- Từ J2SE 5.0, đặc điểm autoboxing và unboxing sẽ tự động chuyển đổi primitive thành object (là autoboxing) và từ object thành primitive (là unboxing).
+- Một trong 8 lớp của java.lang package là lớp Wrapper trong Java. Bảng dưới đây liệt kê danh sách 8 lớp Wrapper:
+
+<img src="https://2.pik.vn/2018c4527416-87e4-46a7-8a1b-6ff9cca386cc.jpg">
+
+<a name="GoiboigiatritrongJava"></a>
+
+**37. Gọi bởi giá trị trong Java**
+- Chỉ có gọi bởi giá trị trong Java, không có gọi bởi tham chiếu. Nếu chúng ta gọi 1 phương thức đang truyền 1 giá trị thì đó là gọi bởi giá trị. Các thay đổi được thực hiện trong phương thức được gọi, sẽ không bị tác động trong phương thức đang gọi.
+
+<a name="TukhoaStictfptrongJava"></a>
+
+**38. Từ khóa Strictfp trong Java**
+- Từ khóa strictfp đảm bảo rằng bạn sẽ lấy cùng KQ trên mỗi nền tảng nếu bạn thực hiện các hoạt động trong giá trị số thực dấu chấm động. Phần sau dấu thập phân Precision có thể khác nhau giữa các nền tảng, và đó là lý do tại sao ngôn ngữ lập trình Java cung cấp từ khóa stricfp, để có thể nhận đc cùng kết quả trên mỗi nền tảng. Vì thế, bây giờ bạn sẽ có sự điều khiển tốt hơn với phép toán về số thực.
+- Từ khóa strictfp có thể đc áp dụng trên các phương thức, các lớp, và interface.
+
+    strictfp class A{} //strictfp áp dụng trên lớp
+
+    strictfp interface M{}  // áp dụng trên interface
+
+    class A{ strictfp void m() } // áp dụng trên phương thức
+
+- Từ khóa strictfp không có thể đc áp dụng trên các phương thức trừu tượng, các biến hoặc các constructor
+
+    class B{ strictfp abstract void m() };
+    // sự tổ hợp không hợp lệ của các modifier
+
+    class B{ strictfp int data=10; }
+    // modifier strictfp không đc phép ở đây
+
+    class B{ strictfp B() {}}
+    //modifier strictfp không đc phép ở đây
+
+<a name="Date&Time"></a>
+
+**39. Date & Time**
+- Java cung cấp lớp Date có sẵn trong java.util package, lớp này tóm lược ngày tháng và thời gian hiện tại.
+- Lớp Date hỗ trợ hai constructor. Constructor đầu tiên khởi tạo đối tượng với ngày và thời gian hiện tại: Date()
+- Constructor sau chấp nhận một tham số bằng số mili giây đã trôi qua từ nửa đêm ngày 1/1/1970: Date(long millisec)
+- Một khi bạn có một đối tượng Date có sẵn, bạn có thể gọi bất kỳ phương thức hỗ trợ nào để thao tác với ngày tháng này:
+
+<img src="https://2.pik.vn/2018795dc286-55b7-4630-b1ce-fcc9fe55f03f.jpg">
+
+<img src="https://2.pik.vn/20182f2535b7-0866-4d5d-a81d-5d596b4e2c9f.jpg">
+
+- Nhận Date & Time hiện tại: có thể sd một đối tượng Date đơn giản với phương thức toString() để in date và time hiện tại.
+- So sánh Date trong Java: có 3 cách:
+
+    Sử dụng getTime() để nhận số mili giây đã trôi qua từ nửa đêm 1/1/1970 cho cả hai đối tượng và sau đó so sánh hai giá trị này.
+
+    Sử dụng các phương thức before(), after() và equals(). Bởi vì tháng thứ 12 ở trước tháng thứ 18, ví dụ, new Date(99, 2, 12).before(new Date(99, 2, 18)) trả về true.
+    
+    Sử dụng phương thức compareTo(), mà được định nghĩa bởi Comparable interface và được thi hành bởi Date.
+
+- Định dạng Date bởi sd SimpleDateFormat: SimpleDateFormat là một lớp cố định (cụ thể) để định dạng và parse các date theo một phương thức nhạy cảm với locale. SimpleDateFormat cho phép bắt đầu chọn bất kỳ pattern đã được định nghĩa bởi người dùng cho định dạng date-time.
+- Mã hóa định dạng SimpleDateFormat: Để xác định định dạng thời gian, sử dụng một chuỗi time mẫu. Trong pattern này, tất cả chữ cái ASCII được dự trữ (dành riêng) như là các ký tự pattern, mà được định nghĩa như sau:
+
+<img src="https://2.pik.vn/20183267ee2f-9882-493c-8e61-56b6792318a4.jpg">
+
+<img src="https://2.pik.vn/2018dc3f689c-218d-439c-bbf1-a4b6dcf5bf0e.jpg">
+
+- Định dạng Date sd printf: Định dạng date và time có thể được thực hiện một cách đơn giản bởi sử dụng phương thức printf trong Java. Bạn sử dụng một định dạng hai chữ cái, bắt đầu với t và kết thúc với một trong các ký tự trong bảng dưới.
+- Các ký tự biến đổi Date và Time:
+
+<img src="https://2.pik.vn/2018320eb0e1-08e1-438a-992b-ca81d93aecd7.jpg">
+
+<img src="https://2.pik.vn/20189a7dd3cf-c37b-4177-803a-d37e3dada613.jpg">
+
+<img src="https://2.pik.vn/201808d4617f-61ab-4d42-b9ef-577a2a5d3d5c.jpg">
+
+- Parse các String vào trong các Date trong Java: Lớp SimpleDateFormat có một số phương thức bổ sung, đáng kể nhất là parse(), mà parse một chuỗi theo định dạng được lưu giữ trong đối tượng SimpleDateFormat đã cho. 
+
+<a name="RegularExpressiontrongJava"></a>
+
+**40. Regular Expression trong Java**
+- Java cung cấp java.util.regex package cho pattern so khớp với các Regular Expression. Các Regular Expression trong Java là tương tự với Ngôn ngữ lập trình Perl và rất dễ dàng để học.
+- Một Regular Expression là một dãy liên tục của các ký tự đặc biệt mà giúp bạn so khớp hoặc tìm kiếm chuỗi hoặc tập hợp các chuỗi khác, sử dụng một cú pháp riêng biệt trong một pattern. Chúng có thể được sử dụng để tìm, chỉnh sửa và thao tác text và dữ liệu.
+- Gói java.util.regex chủ yếu chứa 3 lớp sau:
+
+    Lớp Pattern: Một đối tượng Pattern là một phép biểu diễn được biên dịch của một Regular Expression. Lớp Pattern không cung cấp một public constructor nào. Để tạo một pattern, bạn đầu tiên phải gọi một trong các phương thức biên dịch static chung của nó, mà sau đó sẽ trả về một đối tượng Pattern. Những phương thức này chấp nhận một Regular Expression như là tham số đầu tiên.
+
+    Lớp Matcher: Một đối tượng Matcher là phương tiện mà thông dịch pattern và thực hiện so khớp các hoạt động với một chuỗi đầu vào. Như lớp Pattern, Matcher không định nghĩa một public constructor nào. Bạn nhận được một đối tượng Matcher bằng việc gọi phương thức matcher trên một đối tượng Pattern.
+
+    PatternSyntaxException: Một đối tượng PatternSyntaxException là một exception (ngoại lệ) chưa được kiểm tra mà chỉ dẫn một lỗi cú pháp trong mẫu Regular Expression.
+
+- Capture các Group trong Java: là một cách coi nhiều ký tự như là một đơn vị đơn. Chúng được tạo bằng việc xác định vị trí của các ký tự để được nhóm vào trong một tập hợp các dấu ngoặc đơn. Ví dụ, Regular Expression (dog) tạo một group đơn chứa các chữ cái là "d", "o" và "g". Để tìm bao nhiêu group có mặt trong Expression đó, bạn gọi phương thức groupCount trên một đối tượng Matcher. Phương thức groupCount trả về một int minh họa số Capturing Groups có mặt trong mẫu của đối tượng Matcher. Cũng có một group đặc biệt, là group 0, mà luôn luôn biểu diễn toàn bộ expression. Group này không được bao gồm trong kết quả của phương thức groupCount.
+
+
 
