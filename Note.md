@@ -850,5 +850,77 @@ protected Object clone() throws CloneNotSupportedException
 
 - Capture các Group trong Java: là một cách coi nhiều ký tự như là một đơn vị đơn. Chúng được tạo bằng việc xác định vị trí của các ký tự để được nhóm vào trong một tập hợp các dấu ngoặc đơn. Ví dụ, Regular Expression (dog) tạo một group đơn chứa các chữ cái là "d", "o" và "g". Để tìm bao nhiêu group có mặt trong Expression đó, bạn gọi phương thức groupCount trên một đối tượng Matcher. Phương thức groupCount trả về một int minh họa số Capturing Groups có mặt trong mẫu của đối tượng Matcher. Cũng có một group đặc biệt, là group 0, mà luôn luôn biểu diễn toàn bộ expression. Group này không được bao gồm trong kết quả của phương thức groupCount.
 
+<a name="FilevaI/O"></a>
 
+**41. File và I/O**
+- Về cơ bản, dùng InputStream để đọc các file (file ảnh, phim....), còn dùng FileReader sẽ tốt hơn khi đọc các đoạn text (file txt...). Nên nhớ file docx không phải là file binary mà là file nhị phân.
+- Gói I/O chứa gần như tất cả các lớp cần để thực hiện input và output trong Java.
+- Một stream có thể đc ĐN như 1 dãy liên tục dữ liệu, Input Stream đc sd để đọc dữ liệu từ 1 nguồn, Output Stream đc sd để ghi dữ liệu tới 1 đích đến.
+- Byte Stream trong Java đc sd để thực hiện input và output của các byte (8 bit). Hai lớp thường đc sd nhiều nhất là FileInputStream và FileOutPutStream.
+- Standart Stream: tất cả các ngôn ngữ lập trình cung cấp sự hỗ trợ cho I/O chuẩn, tại đây chương trình của người sd có thể nhận đầu vào từ 1 bàn phím và sau đó tạo KQ trên màn hình mt.
+
+    Đầu vào chuẩn (Standard Input): đc sd để truyền DL tới chương trình của người sd và thường thì 1 bàn phím đc sd như là đầu vào chuẩn và đc biểu diễn như System.in
+
+    Đầu ra chuẩn (Standard Output): sd để hiển thị KQ đầu ra từ chương trình, thường thì 1 màn hình máy tính đc sd như đầu ra chuẩn và đc biểu diễn như System.out
+
+    Lỗi chuẩn(Standard Error): đc sd để hiển thị các lỗi trong chương trình của ng dùng, thường thì 1 màn hình máy tính đc sd như lỗi chuẩn và đc biểu diễn như System.err
+
+- Đọc và ghi file trong Java: Input Stream đc sd để đọc dữ liệu từ 1 nguồn, Output Stream được sd để ghi dữ liệu tới đích.
+Dưới đây là 1 cấu trúc có thứ tự của các lớp dderr xử lý các luồng Input và Output:
+
+    <img src="https://2.pik.vn/2018f3f98718-668b-47f5-963e-c7f45390bf08.jpg">
+
+- FileInputStream: luồng này đc sd để đọc dữ liệu từ các file. Các đối tượng có thể đc tại bởi sử dụng từ khóa new và có 1 số kiểu constructor có sẵn.
+
+    InputSream f=new FileInputStream("C:/java/hello); //constructor nhận tên file như là 1 chuỗi để tạo đối tượng Input Stream để đọc file.
+
+
+    Constructor nhận 1 đối tượng File để tạo 1 đối tượng Input Stream để đọc file. Đầu tiên tạo 1 đối tượng file bởi sd phương thức File() như sau:
+
+    File f=new File("C:/java/hello");
+
+    InputStream f=new FileInputStream(f);
+
+    Khi có đối tượng InputStream, có 1 danh sách các phương thức có thể đc sd để đọc stream hoặc để thực hiện hoạt động nào khác trên stream này:
+
+    <img src="https://2.pik.vn/20184d98e8b1-9306-4423-b3a6-679a97eb0080.jpg">
+
+- FileOutputStream: đc sd để tạo file và ghi dữ liệu vào trong nó. Luồng này sẽ tạo 1 file, nếu nó chưa tồn tại, trước khi mở nó để ghi output. Dưới đây là 2 constructor có thể đc sd để tạo 1 đối tượng FileOutputStream trong Java:
+
+    Constructor sau nhận một tên file như là một chuỗi để tạo một đối tượng output stream để ghi file:
+
+    OutputStream f=new FileOutputStream("C:/java/hello");
+
+    Constructor sau nhận một đối tượng file để tạo một đối tượng output stream để ghi file:
+
+    File f=new File("C:java/hello");
+
+    OutputStream f=new FileOutputStream(f);
+
+    <img src="https://2.pik.vn/201807d14932-dc50-4e5c-8f3a-3cc80d47b24e.jpg">
+
+- Thư mục trong Java: Một thư mục là File mà có thể giữ một danh sách các file và thư mục khác. Sd đối tượng file để tạo các thư mục, liệt kê các file có sẵn trong 1 thư mục.
+- Tạo thư mục: 
+
+    Phương thức mkdir() tạo 1 thư mục, trả về true nếu thành công, false nếu thất bại.
+
+    Phương thức mkdirs() tạo cả 1 thư mục và tất cả các thư mục cha of nó.
+
+- Liệt kê thư mục trong Java: có thẻ sd phương thức list() đc cung cấp bởi đối tượng File để liệt kê tất cả các file và thư mục có sẵn trong 1 thư mục.
+
+<a name="ByteArrayInputStream"></a>
+
+**42. ByteArrayInputStream**
+- Lớp ByteArrayInputStream cho phép 1 bộ đệm (buffer) trong bộ nhớ để được sử dụng như là 1 InputStream. Nguồn Input này là 1 mảng byte. Có những mẫu constructor sau để tạo đối tượng ByteArrayInputStream. 
+
+    Nhận 1 mảng byte như là tham số: 
+    
+ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a)
+
+    Form khác nhận 1 mảng các byte, và hai int, với off là byte đầu tiên để đc đọc và len là số byte để đc đọc:
+
+ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len)
+- Khi có đối tượng ByteArrayInputStream thi có 1 số phương thức có thể đc sd để đọc stream hoặc để thực hiện các hoạt động khác trên stream đó.
+
+<img src="https://2.pik.vn/20187a5e08a5-f3ae-42b7-8898-947e0703001f.jpg">
 
