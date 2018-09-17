@@ -924,3 +924,108 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 
 <img src="https://2.pik.vn/20187a5e08a5-f3ae-42b7-8898-947e0703001f.jpg">
 
+<a name="DataInputStream"></a>
+
+**43. DataInputStream**
+- DataInputStream đc sd trong ngữ cảnh của DataOutputStream và có thể đc sd để đọc các dữ liệu gốc (nguyên thủy) trong Java.
+- Constructor để tạo 1 InputStream:
+
+    InputStream in= DataInputStream(InputStream in);
+
+- Sau khi có đối tượng DataInputStream thì có 1 số phương thức có thể đc sd để đọc stream đó hoặc để thực hiện các hoạt động trên stream đó:
+
+<img src="https://2.pik.vn/2018b28940d5-dddb-4979-933b-4cfe4169092f.jpg">
+
+<a name="ByteArrayOutputStream"></a>
+
+**44. ByteArrayOutputStream**
+- Lớp ByteArrayOutputStream trong Java tạo 1 buffer trong bộ nhớ và tất cả dữ liệu được gửi tới stream này đc lưu trong buffer. Có các mẫu constructor sau để tạo đối tượng ByteArrayOutputStream trong Java:
+
+    OutputStream bOut=new ByteArrayOutputStream(); //tạo 1 buffer 32 byte
+
+    OutputStream bOut=new ByteArrayOutputStream(int a); //tạo 1 buffer kích cỡ là int a
+
+- Khi có đối tượng ByteArrayOutputStream thì có 1 số phương thức có thể được sd để ghi stream đó hoặc để thực hiện các hoạt động khác trên stream đó:
+
+<img src="https://2.pik.vn/2018ac4a9120-e5de-4470-a160-23c338984978.jpg">
+
+<a name="DataOutputStream"></a>
+
+**45. DataOutputStream**
+- Luồng DataOutputStream cho phép ghi dữ liệu kiểu gốc tới 1 nguồn output.
+- Constructor để tạo 1 DataOutputStream:
+
+    DataOutputStream out= DataOutputStream(OutputStream out);
+
+- Khi có đối tượng DataOutputStream thì có 1 phương thức có thể đc sd để ghi stream này hoặc thực hiện hoạt động khác trên stream đó:
+
+<img src="https://2.pik.vn/20183557a12b-8e38-4837-b402-f94606044573.jpg">
+
+<a name="LopFile"></a>
+
+**46. Lớp File**
+- Lớp file trong Java biểu diễn các pathname của các file và thư mục theo phương thức trừu tượng. Lớp này đc sd để tạo các file và thư mục, để tìm kiếm các file, xóa các file,...
+- Đối tượng File biểu diễn file/thư mục thực sự trên đĩa. Có các constructor sau để tạo đối tượng File trong Java:
+
+    File(File parent, String child); //tạo đối tượng File mới từ 1 pathname trừu tượng cha và 1 chuỗi pathname con.
+
+    File(String pathname); //tạo 1 đối tượng file mới bởi việc biến đổi chuỗi pathname đã cho thành 1 pathname trừu tượng.
+
+    File(String parent, String child); //tạo 1 đối tượng File mới từ 1 chuỗi pathname cha và 1 chuỗi pathname con.
+
+    File(URI uri); //tạo 1 đối tượng File mới bởi việc biến đổi URI đã cho thành 1 pathname trừu tượng.
+
+- Khi có đối tượng File, thì có các phương thức sau giúp thao tác các file trong Java:
+
+<img src="https://2.pik.vn/20183f165614-d323-4271-8eec-b204aa94d507.jpg">
+
+<img src="https://2.pik.vn/2018584c3a4a-c116-4161-8c28-fa20ae919fd2.jpg">
+
+<img src="https://2.pik.vn/2018a684c965-6a3b-49f3-88c1-7465faf24430.jpg">
+
+<img src="https://2.pik.vn/2018d6c72f1d-8e57-4932-80a1-b708fd074ce6.jpg">
+
+<img src="https://2.pik.vn/2018d047f0d4-11a8-496a-8ff4-64652f6152b4.jpg">
+
+<img src="https://2.pik.vn/2018ceaa50c7-e80b-426e-89dd-37d214d3ee8e.jpg">
+
+<img src="https://2.pik.vn/201895f37294-4505-4416-ad73-16c1e83d59d1.jpg">
+
+<a name="LopFileReader"></a>
+
+**47. Lớp FileReader**
+- Lớp FileReader trong Java kế thừa từ lớp InputStreamReader. Lớp FileReader đc sd để đọc các luồng ký tự.
+- Lớp này có 1 số constructor để tạo các đối tượng cần thiết.
+- Cú pháp sau tạo 1 FileReader mới trong Java, được cung cấp File để đọc từ đó:
+    
+    FileReader(File file)
+- Cú pháp sau tạo 1 FileReader mới trong Java, được cung cấp FileDescriptor để đọc từ đó:
+
+    FileReader(FileDescriptor fd)
+- Cú pháp sau tạo 1 FileReader mới trong Java, được cung cấp tên File để đọc từ đó:
+
+    FileReader(String filename)
+- Khi bạn có đối tượng FileReader, thì có 1 số phương thức sau giúp bạn có thể thao tác các file này:
+
+<img src="https://2.pik.vn/2018736bb949-51b8-49f6-8a7c-81c2e39f2836.jpg">
+
+<a name="LopFileWriter"></a>
+
+**48. Lớp FileWriter**
+- Lớp FileWriter kế thừa từ lớp OutputStreamWriter. Lớp này được sử dụng để ghi các luồng ký tự.
+- Lớp FileWriter có một số constructor để tạo các đối tượng cần thiết.
+
+    FileWriter(File file); //tạo một đối tượng FileWriter được cung cấp một đối tượng File.
+
+    FileWriter(File file, boolean append); //tạo một đối tượng FileWriter được cung cấp một đối tượng File với một Boolean chỉ dẫn có hay không phụ thêm dữ liệu đã ghi.
+
+    FileWriter(FileDescriptor fd); //tạo một đối tượng FileWriter mà liên kết với một File Descriptor.
+
+    FileWriter(String fileName); //tạo một đối tượng FileWriter được cung cấp một tên file.
+
+    FileWriter(String fileName, boolean append); tạo một đối tượng FileWriter được cung cấp một tên file với một Boolean chỉ dẫn có hay không phụ thêm dữ liệu đã ghi.
+
+- Khi có đối tượng FileWriter, thì có 1 số phương thức đc sd để thao tác file này:
+
+<img src="https://2.pik.vn/201858bf40e5-3541-4739-86b4-2a757a9f5fe6.jpg">
+
