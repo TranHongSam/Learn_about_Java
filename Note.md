@@ -1029,3 +1029,92 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 
 <img src="https://2.pik.vn/201858bf40e5-3541-4739-86b4-2a757a9f5fe6.jpg">
 
+<a name="StringtrongJava"></a>
+
+**49. String trong Java**
+- Chuỗi (String) trong Java cung cấp nhiều khái niệm đa dạng giúp thao tác và xử lý với chuỗi như so sánh, cắt,nối, tìm độ dài, thay thế, tìm chuỗi con,...
+- Trong Java, về cơ bản chuỗi là 1 đối tượng mà biểu diễn dãy các giá trị char; một mảng các ký tự làm việc khá giống như chuỗi trong Java.
+- Lớp java.lang.String triển khai các Serializable, Comparable, CharSequence Interface.
+- Chuỗi (String) là không thể thay đổi (immutable): nó không thể bị thay đổi nhưng sẽ có 1 instance được tạo. Tuy nhiên, nếu muốn sử dụng các lớp có thể thay đổi, có thể lựa chọn sử dụng các lớp StringBuffer và SringBuilder.
+- Chuỗi là 1 dãy ký tự liên tục. Trong Java, String là 1 đối tượng biểu diễn 1 dãy ký tự liên tục. Lớp String được sử dụng để tạo đối tượng String.
+- Tạo đối tượng String trong Java: 2 cách
+
+    1. Tạo bằng chuỗi String literal: String s="xinchao";
+
+    2. Sử dụng từ khóa new: String s=new String("xinchao"); //tạo 2 đối tượng và 1 biến tham chiếu.  Trong trường hợp này, JVM sẽ tạo 1 đối tượng mới trong bộ nhớ Heap, hằng "xinchao" sẽ đc đặt trong Pool. Biến sẽ tham chiếu tới đối tượng trong Heap (k phải Pool).
+
+- Tạo các String được định dạng trong Java: Các phương thức printf() và format() để in output với các số được định dạng. Lớp String có 1 phương thức lớp tương đương là format(), mà trả về 1 đối tượng String chứ k phải là đối tượng PrintStream.
+- Sử dụng phương thức static format() của đối tượng String cho phép tạo 1 chuỗi đã đc định dạng để có thể tái sd, trái ngược với lệnh in 1 lần
+- VD: Có thể viết:
+
+    String fs;
+
+    fs=String.format("Gia trị cua bien float la "+"%f, trong khi gia tri cua bien integer "+" bien la %đ, va chuoi la"+"is %s", floatVar, intVar, stringVar);
+
+    System.out.println(fs);
+
+    Thay vì:
+
+    System.out.println("Gia trị cua bien float la "+"%f, trong khi gia tri cua bien integer "+" bien la %đ, va chuoi la"+"is %s", floatVar, intVar, stringVar);
+
+<a name="Immutable String"></a>
+
+**50. Immutable String**
+- Trong Java, các đối tượng chuỗi là inmutable (khôn thể thay đổi hay không thể sửa đổi).
+- Khi đối tượng String đc tạo thì dữ liệu hoặc trạng thái của nó không thể bị thay đổi nhưng 1 đối tượng String khác đc tạo.
+- Vì Java sd khái niệm String literal nên đối tượng String là immutable. Giả sử có 5 biến tham chiếu, tất cả tham chiếu tới một đối tượng "vietjack". Nếu một biến tham chiếu thay đổi giá trị của đối tượng, nó sẽ có tác động tới tất cả các biến tham chiếu khác. Đó là tại sao đối tượng String là Immutable trong Java.
+
+<a name="Sosanhchuoi"></a>
+
+**51. So sánh chuỗi**
+- Có thể SS chuỗi dựa trên cơ sở nội dung và tham chiếu. Nó đc sd trong sự xác nhận bởi phương thức equal(), sắp xếp bởi phương thức compareTo(), so khớp tham chiếu bởi toán tử==, ...
+- SS chuỗi bởi phương thức equals(): phương thức equal() so sánh nội dung ban đầu của chuỗi. Nó SS tính cân bằng của các giá trị chuỗi. Lớp String cung cấp 2 phương thức: 
+
+    public boolean equals(Object khác): SS chuỗi này với Object đã cho.
+
+    public boolean equalsIgnoreCase(String khác): SS chuỗi này với chuỗi khác, bỏ qua sự khác biệt về kiểu.
+
+- SS chuỗi bởi toán tử ==: SS các tham chiếu chứ không phải SS các giá trị.
+- SS chuỗi bởi phương thức compareTo(): ss các giá trị theo từ điểm và trả về 1 giá trị nguyên miêu tả rằng nếu chuỗi đầu tiên là nhỏ hơn, bằng hoặc lớn hơn chuỗi thứ hai. Có 2 chuỗi s1 và s2:
+
+    s1 == s1 thì trả về 0
+
+    s1 > s2 thì trả về giá trị âm
+
+    s1 < s2 thì trả về giá trị dương
+
+<a name="Noichuoi"></a>
+
+**53. Nối chuỗi**
+- Nối chuỗi tạo nên 1 chuỗi mới là chuỗi tổ hợp của nhiều chuỗi.
+- Có 2 cách để nối chuỗi:
+
+    Bởi toán tử nối chuỗi +
+
+    Bởi phương thức concat()
+
+- Nối chuỗi bởi toán tử +: trong Java, nối chuỗi được thực hiện thông qua lớp StringBuilder (hoặc StringBuffer) và phương thức append() của nó. Toán tử nối chuỗi mới bằng cách phụ thêm toán hạng thứ hai vào phần cuối của toán hạng đầu tiên. Toán tử nối chuỗi không những có thể nối chuỗi mà còn có thể nối các giá trị ở kiểu dữ liệu gốc.
+- Sau mỗi một String literal, tất cả toán tử + sẽ được đối xử như là toán tử nối chuoix.
+- Nối chuỗi bởi phương thức concat(): nối chuỗi đã cho vào phần cuối của chuỗi hiện tại.
+ 
+    public String concat(String khac)
+
+<a name="Chuoicon"></a>
+
+**54. Chuỗi con**
+- Một phần của chuỗi gọi là chuỗi con (substring hay chuỗi phụ).
+- Chuỗi con là 1 tập con của chuỗi khác.
+- Trong trường hợp startIndex là inclusive (bao gồm cả chỉ mục đầu tiên này) và endIndex là exclusive (loại trừ đi chỉ mục đầu tiên này).
+- Chỉ mục bắt đầu tính từ 0.
+- Có thể lấy chuỗi con từ đối tượng String đã cho bởi 1 trong 2 phương thức sau:
+
+    public String substring(int startIndex): trả về đối tượng String mới chứa chuỗi con của chuỗi đã cho từ chỉ mục startIndex đã xác định (đây là inclusive).
+
+    public String substring(int startIndex, int endIndex): trả về đối tượng String mới chứa chuỗi con của chuỗi đã cho từ chỉ mục startIndex (đây là inclusive) tới chỉ mục endIndex (đây là exclusive) đã xác định.
+
+<a name="PhuongthuccualopString"></a>
+
+**55. Phương thức của lớp Stirng**
+
+
+    
