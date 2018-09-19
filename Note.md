@@ -1115,6 +1115,83 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 <a name="PhuongthuccualopString"></a>
 
 **55. Phương thức của lớp Stirng**
+- Lớp java.lang.String cung cấp rất nhiều phương thức giúp thao tác và xử lý các chuỗi (cắt chuỗi, nối chuỗi, chuyển đổi chuỗi, so sánh chuỗi, thay thế chuỗi, ...)
+- Phương thức toUpperCase(): chuyển đối chuỗi thành chữ hoa và toLowerCase(): chuyển đối chuỗi thành chữ thường.
+- Phương thức trim(): loại bỏ các khoảng trống trắng ở trước và sau chuỗi (leading và trailing).
+- Phương thức startWith() và endsWith(): trả về true nếu đúng là điểm bắt đầu và kết thúc của chuỗi.
+- Phương thức charAt() trả về ký tự tại chỉ mục đã cho.
+- Phương thức length() trả về độ dài của chuỗi.
+- Phương thức intern: Ban đầu, 1 Poll của các chuỗi là trống, đc duy trì riêng cho lớp String. Khi phương thức intern đc gọi, nếu Pool đã chứa 1 chuỗi bằng với đối tượng String như khi đc xác định bởi phương thức equal(object), thì chuỗi Pool đc trả về. Nếu không thì đối tượng String này đc thêm vào Pool và 1 tham chiếu tới đối tượng String này đc trả về.
+- Phương thức valueOf(): trả về biểu diễn của giá trị đã cho. Phương thức này biến đổi kiểu đã cho như int, long, float, double, Boolean, char, mảng char thành chuỗi.
+- Phương thức replace(): thay thế tất cả sự xuất hiện của dãy ký tự đầu bởi dãy ký tự thứ hai.
+- Các phương thức còn lại:
+
+<img src="https://2.pik.vn/20185bfcac66-202b-405d-83dd-166d46b28e44.jpg">
+
+<img src="https://2.pik.vn/20185e4f0196-4cc8-4afe-b048-7d691ef29c34.jpg">
+
+<img src="https://2.pik.vn/201854d6fe0d-c9a1-42e7-b990-62c057123c63.jpg">
+
+<img src="https://2.pik.vn/2018ee0a2e2a-3fef-4247-af7a-3b08b73a2ae8.jpg">
+
+<img src="https://2.pik.vn/2018c7c3e093-6ede-419e-ba78-a4d3a993ff6b.jpg">
+
+<img src="https://2.pik.vn/2018588fc387-7057-45cb-ac38-ce6c69cc07e3.jpg">
+
+<img src="https://2.pik.vn/2018d2019b13-9bb7-4e40-8c65-01fc58ea2d37.jpg">
+
+<img src="https://2.pik.vn/201825c8e99f-341e-47cc-aacd-68cf2d5727a3.jpg">
+
+<img src="https://2.pik.vn/201868fbbdf7-3818-4ee4-8fb1-284bc81f88b2.jpg">
+
+<a name="LopStringBuffer"></a>
+
+**56. Lớp StringBuffer**
+- Lớp StringBuffer đc sd để tạo chuỗi có thể sửa đổi (chuỗi dạng mutable). Lớp StringBuffer giống như lớ String trong Java, ngoại trừ nó có thể sửa đổi.
+- Lớp StringBuffer là an toàn luồng (Thread-safe), vd: nhiều Thread không thể truy cập nó đồng thời. Do đó nó an toàn và sẽ cho kết quả trong 1 thứ tự.
+- Các Constructor quan trọng của lớp StringBuffer: 
+
+    StringBuffer(): tạo 1 bộ đệm chuỗi trống với dung lượng capacity ban đầu là 16.
+
+    StringBuffer(String str): tạo 1 bộ đệm chuỗi với chuỗi đã xác định.
+
+    StringBuffer(int capacity): tạo 1 bộ đệm chuỗi trống với dung lượng capacity đã cho.
+
+- Các phương thức quan trọng của lớp StringBuffer: 
+
+    1. public synchronized StringBuffer append(String s): sd để phụ thêm (append) chuỗi đã cho với chuỗi này. Phương thức append() được nạp chồng giống dạng append(char), append(boolean), append(int), append(float), append(double) ...
+
+    2. public synchronized StringBuffer insert(int offset, String s): sd để chèn chuỗi đã cho với chuỗi này tại vị trí đã cho. Phương thức insert() được nạp chồng giống dạng insert(int, char), insert(int, boolean), insert(int, int), insert(int, float), insert(int, double) ...
+
+    3. public synchronized StringBuffer replace(int startIndex, int endIndex, String str): sd để thay thế chuỗi từ chỉ mục ban đầu startIndex và chỉ mục kết thúc endIndex đã cho.
+
+    4. public synchronized StringBuffer delete(int startIndex, int endIndex): sd để xóa chuỗi từ chỉ mục startIndex và endIndex đã cho.
+
+    5. public synchronized StringBuffer reverse(): được sử dụng để đảo ngược chuỗi.
+
+    6. public int capacity(): được sử dụng để trả về dung lượng capacity hiện tại.
+
+    7. public void ensureCapacity(int minimumCapacity): sd để đảm bảo capacity ít nhất = với minimun đã cho.
+
+    8. public char charAt(int index): được sử dụng để trả về ký tự tại vị trí đã cho.
+
+    9. public int length(): được sử dụng để trả về độ dài của chuỗi (chẳng hạn như tổng số ký tự).
+
+    10. public String substring(int beginIndex): được sử dụng để trả về chuỗi con từ chỉ mục bắt đầu beginIndex đã cho.
+
+    11. public String substring(int beginIndex, int endIndex): sd để trả về chuỗi con từ beginIndex đến endIndex đã cho.
+
+- Chuỗi dạng mutable: 1 chuỗi có thể sửa đổi đc xem như là chuỗi dạng mutable. Các lớp StringBuffer và StringBuilder đc sd để tạo các chuỗi dạng mutable.
+- Phương thức append(): sd để nối chuỗi đã cho với chuỗi này.
+- Phương thức insert(): chèn chuỗi đã cho vào chuỗi này tại vị trí đã cho.
+- Phương thức replace(): thay thế chuỗi đã cho bắt đầu từ chỉ mục beginIndex tới endIndex.
+- Phương thức delete(): xóa chuỗi bắt đầu từ chỉ mục beginIndex tới endIndex đã cho.
+- Phương thức reverse(): đảo ngược chuỗi hiện tại.
+- Phương thức capacity(): trả về dung lượng của capacity hiện tại của bộ đệm. Dung lượng capacity mặc định của bộ đệm là 16. Nếu số ký tự tăng lên từ dung lượng hiện tại, nó tăng dung lượng theo công thức (oldcapacity*2)+2. Ví dụ, nếu dung lượng hiện tại là 16, nó sẽ là (16*2)+2=34.
+- Phương thức ensureCapacity(): đảm bảo rằng capacity ít nhất bằng với minimum đã cho. Nếu nó lớn hơn capacity hiện tại, nó tăng capacity theo công thức (oldcapacity*2)+2.
+
+
+
 
 
     
