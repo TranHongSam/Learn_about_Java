@@ -1190,7 +1190,42 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 - Phương thức capacity(): trả về dung lượng của capacity hiện tại của bộ đệm. Dung lượng capacity mặc định của bộ đệm là 16. Nếu số ký tự tăng lên từ dung lượng hiện tại, nó tăng dung lượng theo công thức (oldcapacity*2)+2. Ví dụ, nếu dung lượng hiện tại là 16, nó sẽ là (16*2)+2=34.
 - Phương thức ensureCapacity(): đảm bảo rằng capacity ít nhất bằng với minimum đã cho. Nếu nó lớn hơn capacity hiện tại, nó tăng capacity theo công thức (oldcapacity*2)+2.
 
+<a name="LopStringBuilder"></a>
 
+**57. Lớp StringBuilder**
+- Lớp StringBuilder đc sd để tạo chuỗi có thể thay đổi (chuỗi dạng mutable). Lớp StringBuilder giống như Lớp StringBuffer ngoại trừ việc nó không thay đổi.
+- Các Constructor quan trọng: 
+
+    StringBuilder(): tạo 1 Builder trống với dung lượng capacity ban đầu là 16.
+
+    StringBuilder(String str): tạo 1 Builder với chuỗi đã xác định.
+
+    StringBuilder(int capacity): tạo 1 Builder trống với dung lượng capacity đã cho.
+
+- Các phương thức quan trọng của lớp StringBuilder:
+
+<img src="https://2.pik.vn/2018128c0103-5500-4148-87d9-9179774bf37b.jpg">
+
+<img src="https://2.pik.vn/2018d9c46b8b-3b37-413b-83d7-f0b594e5128e.jpg">
+
+<a name="SosanhlopStringvoiStringBuffer"></a>
+
+**58. So sánh lớp String với StringBuffer**
+
+<img src="https://2.pik.vn/2018403ba027-15e6-4b97-97f6-c4fae9679875.jpg">
+
+<a name="StringBuildervoiStringBuffer"></a>
+
+**59. StringBuilder với StringBuffer**
+- Sự khác nhau giữa StringBuffer và StringBuilder:
+
+<img src="https://2.pik.vn/2018ee17b6f3-f7a5-4a85-8686-9f574c77e149.jpg">
+
+<a name="TaoImmutableString"></a>
+
+**60. Tạo Immutable String**
+
+    
 
 
 
