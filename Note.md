@@ -1224,9 +1224,76 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 <a name="TaoImmutableString"></a>
 
 **60. Tạo Immutable String**
+- Có nhiều lớp Immutable (lớp không thể sửa đổi) trong Java như: String, Boolean, Byte, Short, Integer, Long, Float, Double, ... Tất cả các lớp Wrapper và lớp String là không thể thay đổi. Có thể tạo các lớp không thể thay đổi bởi tạo lớp final có các thành viên dữ liệu là final.
 
+<a name="StringtoString()trongJava"></a>
+
+**61. String toString() trong Java**
+- Phương thức toString() trả về biểu diễn chuỗi của đổi tượng (sd phương thức này để biểu diễn bất cứ đối tượng nào dưới dạng 1 chuỗi).
+- Nếu in bất cứ đối tượng nào, trình biên dịch Compiler sẽ gọi nội tại phương thức toString() trên đối tượng. Vì thế việc ghi đè phương thức toString() và trả về kết quả mong muốn, nó có thể là trạng thái của 1 đối tượng, tùy thuộc vào trình triển khai.
+- Bằng việc ghi đè phương thức toString() của lớp Object, có thể trả về các giá trị của đối tượng, vì thế k cần viết quá nhiều code.
+
+<a name="LopStringTokenizer"></a>
+
+**62. Lớp StringTokenizer**
+- Lớp java.util.StringTokenizer cho phép chia 1 chuỗi thành các token. Đây là cách đơn giản để chia chuỗi. Lớp này không cung cấp các phương tiện để phân biệt các số, các chuỗi đã đc trích dẫn, các định danh indentifier, ... giống như lớp StrweamTokenizer.
+- Các Constructor của lớp StringTokenizer:
+
+<img src="https://2.pik.vn/2018a3d66c24-ed82-43c2-bbcd-20c92adf7f44.jpg">
+
+- Các phương thức của lớp StringTokenizer:
+
+<img src="https://2.pik.vn/20184770c3fb-200e-4630-9d93-2f1687b023a6.jpg">
+
+- Note: bây giờ lớp StringTokenizer là cũ, nên sử dụng phương thức split() của lớp String hoặc Regex (Regular Expression) để chia chuỗi thành các token nhỏ.
+
+<a name="LopStringTokenizer"></a>
+
+**63. Xử lý ngoại lệ (Exception Handling)**
+- Trong Java, Exception là một sự kiện mà phá vỡ luồng chuẩn của chương trình. Nó là 1 đối tượng đc ném tại Runtime. Một exception là 1 vấn đề xảy ra trong quá trình thực hiện chương trình. Một exception xảy ra với nhiều lý do: người dùng nhập dữ liệu không hợp lệ, một file cần đc mở nhưng k thể tìm thấy,kết nối mạng bị ngắt trong quá trình thực hiện giao tiếp hoặc JVM hết bộ nhớ.
+- Các loại ngoại lệ:
+
+    Checked Exception: là ngoại lệ thường xảy ra do người dùng mà lập trình viên không thể lường trước đc. Checked Exception là các lớp mà kế thừa lớp Throwable ngoại trừ RuntimeException và Error (IOException, SQLException, …) Checked Exception được kiểm tra tại thời gian biên dịch compile-time.
+
+    Unchecked Exception: ngoại lệ xảy ra ở runtime có thể tránh được. Unchecked Exception là các lớp kế thừa RuntimeException (vd: ArithmaticException, NullPointerException, ArrayIndexOutOfBoundsException, … ) Unchecked Exception không được kiểm tra tại compile-time, mà được kiểm tra tại runtime. 
+
+    Error: không giống các exception, nhưng vấn đề xảy ra vượt quá tầm kiểm soát của lập trình viên hây người sd. Error đc bỏ qua trong code vì hiếm khi có thể làm gì đó khi chương trình bị error (vd: OutOfMemoryError, VirtualMachineError, AssertionError, … ). Nó đc bỏ qua trong quá trình Java biên dịch.
+
+- Xử lý ngoại lệ (Exception Handling) là 1 kỹ thuật để xử lý các Runtime như ClassNotFound, IO, SQL, Remote, ... Lợi thế chính của xử lý ngoại lệ là để duy trì luồng chuẩn của ứng dụng. Exception thường phá vỡ luồng chuẩn của ứng dụng. Vd: có 10 lệnh trong chương trình và xuất hiện 1 Exception tại lệnh 5, phần còn lại of code sẽ không đc thực thi (từ lệnh 6 đến lệnh 10); nếu thực hiện Exception Handling phần lệnh còn lại sẽ đc thực thi.
+- Cấp bậc exception trong Java: tất cả các lớp exception đều là lớp con của lớp java.lang.Exception. Lớp exception, lớp Error là lớp con của lớp Throwable. 
+- Error không thường đc đặt bẫy bởi các chương trình Java mà thường đc tạo ra để thể hiện lỗi trong môi trường runtime. Vd: JVM hết bộ nhớ. Thông thường các chương trình k thể khôi phục từ các lỗi..
+
+<img src="https://2.pik.vn/2018a0e06be3-b1ce-46a5-9fba-d56eb8a96d88.jpg">
+
+- Danh sách các Unchecked RuntimeException trong Java:
+
+<img src="https://2.pik.vn/20181093a8a5-ad1b-4ffb-93b9-3bbadd962a9f.jpg">
+
+- Danh sách các Checked RuntimeException trong Java:
+
+<img src="https://2.pik.vn/2018d442e7c8-d85e-41be-bdfc-93b8ad4c0966.jpg">
     
+- Các phương thức của lớp Exceptions trong Java:
+
+<img src="https://2.pik.vn/2018182ffd7f-1fc3-4cd2-8a6d-aa9c6bb8c433.jpg">
+
+- Tình huống phổ biến mà Exception có thể xảy ra: 
+
+    int a=50/0; // ArithmaticException (xảy ra nếu chia bất cứ số nào cho số 0).
+
+    String s=null;
+    System.out.println(s.length()); // NullPointerException (nếu có giá trị null trong bất cứ biến nào, thì thực hiện bất cứ hoạt động nào bởi biến này làm xuất hiện kiểu exception này).
+
+    String s="abc";
+    int i=Integer.parseInt(s); // NumberFormatException (việc định dạng sai bất cứ giá trị nào, có thể gây ra loại ngoại lệ này).
+
+    int a[]=new int[5];
+    a[10]=50; // ArrayIndexOutOfBoundsException (nếu đang chèn bất cứ giá trị nào trong 1 chỉ mục sai sẽ làm xuất hiện kiểu exception này).
+
+- Các từ khóa để xử lý ngoại lệ: try, catch, finally, throw, throws
+
+<a name="Khoitry-catch"></a>
+
+**64. Khối try-catch**
 
 
-
-    
