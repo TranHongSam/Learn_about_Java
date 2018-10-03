@@ -1295,5 +1295,46 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 <a name="Khoitry-catch"></a>
 
 **64. Khối try-catch**
+- Khối try-catch đc sd bao quanh code mà có thể ném 1 Exception. Nó phải đc sd bên trong phương thức. Khối try phải đc theo sau bởi khối catch hoặc khối finally.
+- Cú pháp:
 
+    try{
 
+    }catch(Exception_class_Name ex){}
+
+    try{
+
+    }finally{}
+
+- Khối catch trong Java đc sd để xử lý các Exception. Nó phải đc sd sau khối try. Có thể sd nhiều khối catch với 1 try đơn.
+- Nhiều khối catch trong Java: khi phải thực hiện các tác vụ khác nhau mà có thể xảy ra các exception khác nhau, phải sd nhiều khối catch.
+
+    Quy tắc 1: tại 1 thời điểm, chỉ 1 exception đc xuất hiện và tại 1 thời điểm chỉ có 1 khối catch đc thực thi.
+
+    Quy tắc 2: tất cả khối catch phải đc sắp xếp từ cụ thể nhất tới chung nhất. VD: việc bắt ArithimeticExption phải ở trước việc bắt Exception.
+
+- Lồng khối try trong Java: đôi khi có tình huống là 1 phần của 1 khối code có thể gây ra 1 lỗi và toàn bộ khối lại có thể gây ra lỗi khác. Trong tình huống đó, Exception Handler phải đc lồng vào nhau.
+
+<a name="Khoifinally"></a>
+
+**65. Khối finally**
+- Được sd để thực thi các phần code quan trọng như đóng kết nối, đóng stream,... Khối finally luôn được thực thi dù cho exception có đc xử lý hay không. Khố finally phải đc theo sau bởi khối try hoặc khối catch.
+- Nếu không xử lý ngoại lệ trước khi kết thúc chương trình, JVM sẽ thực thi khối finally (nếu không có).
+- Với 1 khối try có thể có 0 hoặc nhiều khối catch, nhưng chỉ có 1 khối finally.
+- Khối finally sẽ không đc thực thi nếu chương trình thoát ra (hoặc gọi System.exit() hoặc gây ra 1 lỗi nghiêm trọng tại Fatal Error mà làm ngừng tiến trình).
+- Phân biệt final, finally, finalize:
+
+<img src="https://2.pik.vn/20185d17048a-4e3d-4f00-8e56-698a65eb1755.jpg">
+
+<a name="Tukhoathrow"></a>
+
+**66. Từ khóa throw**
+- Từ khóa throw đc sd để ném tường minh 1 Exception. Có thể ném hoặc Checked Exception hoặc Unchecked Exception bởi từ khóa throw. Từ khóa throw đc sd chủ yếu để ném các Custom Exception (là các exception đc định nghĩa bởi lập trình viên).
+- Cú pháp: throw exception;
+- Quá trình lan truyền Exception: Đầu tiên, 1 exception đc ném từ đầu Stack và nếu nó không đc bắt, nó chuyển xuống dưới Call Stack tới phương thức trước đó, nếu tại đây nó không đc bắt, thì exception lại di chuyển xuống dưới tới phương thức trước đó,... tới khi nó đc bắt hoặc tới khi nó chạm đáy của Call Stack. Đây là quá trình lan truyền exception. 
+- Theo mặc định, Unchecked Exception được lan truyền trong Calling Chain.
+- Theo mặc định, Checked Exception không được lan truyền trong Calling Chain.
+
+<a name="Tukhoathrows"></a>
+
+**67. Từ khóa throws**
