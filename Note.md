@@ -1329,7 +1329,7 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 <a name="Tukhoathrow"></a>
 
 **66. Từ khóa throw**
-- Từ khóa throw đc sd để ném tường minh 1 Exception. Có thể ném hoặc Checked Exception hoặc Unchecked Exception bởi từ khóa throw. Từ khóa throw đc sd chủ yếu để ném các Custom Exception (là các exception đc định nghĩa bởi lập trình viên).
+- Từ khóa throw đc sd để ném tường minh 1 Exception. Có thể ném Checked Exception hoặc Unchecked Exception bởi từ khóa throw. Từ khóa throw đc sd chủ yếu để ném các Custom Exception (là các exception đc định nghĩa bởi lập trình viên).
 - Cú pháp: throw exception;
 - Quá trình lan truyền Exception: Đầu tiên, 1 exception đc ném từ đầu Stack và nếu nó không đc bắt, nó chuyển xuống dưới Call Stack tới phương thức trước đó, nếu tại đây nó không đc bắt, thì exception lại di chuyển xuống dưới tới phương thức trước đó,... tới khi nó đc bắt hoặc tới khi nó chạm đáy của Call Stack. Đây là quá trình lan truyền exception. 
 - Theo mặc định, Unchecked Exception được lan truyền trong Calling Chain.
@@ -1338,3 +1338,44 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 <a name="Tukhoathrows"></a>
 
 **67. Từ khóa throws**
+- Từ khóa throws đc sd để khai báo 1 Exception. Nó cung cấp thông tin tới lập trình viên rằng có thể xuất hiện 1 Exception, để học nên cung cấp 1 code xử lý ngoại lệ để duy trì luồng chuẩn của chương trình.
+- Xử lý ngoại lệ (Exception Handling) chủ yếu được sd để xử lý các Checked Exception. Nếu có xuất hiện bắt cứ Unchecked Exception nào như NullPointerException, thì đó là lỗi of lập trình viên vì họ đã k kiểm tra code trước khi sd.
+- Cú pháp:
+
+    kieu_tra_ve_ten_phuong_thuc() throws ten_lop_exception{
+
+    }
+
+    // nên khai báo kiểu Checked Exception
+
+- Lợi thế của từ khóa throws: sd từ khóa throws các Checked Exception có thể đc lan truyền (trong Call Stack). Nó cung cấp thông tin tới người gọi phương thức về Exception đó.
+- Nếu đang gọi 1 phương thức mà khai báo 1 exception, phải bắt (sd try-catch để xử lý exception đó) hoặc khai báo exception đó (xác định từ khóa throws với phương thức đó).
+- Phân biệt throw và throws trong Java:
+
+<img src="https://2.pik.vn/2018daa1403d-7ed4-456f-b5d9-e95490322651.jpg">
+
+// Checked Exception có thể lan truyền với throws (bảng sai).
+
+- VD:
+
+    void m()throws  ArithmeticException{
+
+        throw new  ArithmeticException("sorry");
+    } 
+
+<a name="ExceptionHandlingvoiMethodOverriding"></a>
+
+**68. ExceptionHandling với MethodOverriding**
+- Các quy tắc khi ghi đè phương thức với xử lý ngoại lệ: 
+
+    1. Nếu phương thức của lớp cha không khai báo 1 exception thì phương thức ghi đè của lớp con không thể khai báo Checked Exception.
+
+    2. Nếu phương thức của lớp cha không khai báo một exception: phương thức ghi đè của lớp con không thể khai báo Checked Exception nhưng có thể khai báo Unchecked Exception.
+
+- Nếu phương thức lớp cha khai báo 1 exception: phương thức ghi đè của lớp con có thể khai báo cùng exception đó, exception của lớp con, hoặc không khai báo exception nào, nhưng không thể khai báo exception cha.
+
+<a name="CustomException"></a>
+
+**69. Custom Exception**
+- Custom Exception là ngoại lệ do lập trình viên tự định nghĩa hoặc tự tạo cho riêng mình. 
+- Custom Exception trong Java đc sd để tùy biến ngoại lệ theo yêu cầu của người dùng. Bởi sự giúp đỡ của ngoại lệ này,bạn có thể có riêng kiểu và thông điệp ngoại lệ cho mình.
