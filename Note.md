@@ -1379,3 +1379,74 @@ ByteArrayInputStream bArray=new ByteArrayInputStream(byte [] a, int off, int len
 **69. Custom Exception**
 - Custom Exception là ngoại lệ do lập trình viên tự định nghĩa hoặc tự tạo cho riêng mình. 
 - Custom Exception trong Java đc sd để tùy biến ngoại lệ theo yêu cầu của người dùng. Bởi sự giúp đỡ của ngoại lệ này,bạn có thể có riêng kiểu và thông điệp ngoại lệ cho mình.
+
+<a name="CautrucdulieutrongJava"></a>
+
+**70. Cấu trúc dữ liệu trong Java**
+- Các cấu trúc dữ liệu cung cấp bởi các package tiện ích của Java  rất mạnh mẽ và thực hiện các tính năng rộng rãi. Những cấu trúc dữ liệu này bao gồm những interface và class: Enumeration, BitSet, Vector, Stack, Dictionary, Hashtable, Properties.
+- Lớp Enumeration: Interface Enumeration bản thân nó không phải là cấu trúc dữ liệu, nhưng rất quan trọng bên trong ngữ cảnh sd các cấu trúc dữ liệu khác. Interface Enumeration định nghĩa để nhận các thành phần kế tiếp từ cấu trúc dữ liệu. VD: Enumeration ĐN phương thức gọi là nextElement đc sd để lấy các thành phần tiếp theo trong cấu trúc dữ liệu chứa nhiều thành phần.
+- Lớp BitSet: triển khai 1 nhóm các bit hoặc flag mà có thể đc thiết lập và xóa 1 cách riêng rẽ. Class này rất hữu dụng tong trường hợp muốn lưu trữ 1 tập hợp các giá trị Boolean và chỉ muốn gắn từng chi tiết các giá trị và thiết lập hay xóa nó thích hợp.
+- Lớp Vector: tương tự các mảng dữ liệu Java truyền thống ngoại trừ việc có thể tăng lưu trữ cho các thành phần mới. Giống như mảng, các thành phần trong đối tượng Vector có thể truy cập bởi index. Khi sd Vector, không cần lo lắng về việc cài đặt nó cho 1 kích cỡ cụ thể ngoài việc tạo ra nó, nó có thể tăng và giảm độ lớn khi cần thiết.
+- Lớp Stack: triển khai 1 LIFO (last-in-first-out) stack các phần tử. Stack như 1 ngăn xếp thẳng đứng các đối tượng. Khi lấy 1 thành phần trên stack, thành phần cuối cùng được thêm vào sẽ được lấy ra đầu tiên. 
+- Lớp Dictionary: là 1 abstract class để định nghĩa cấu trúc dữ liệu cho việc liên kết giữa các key tới value. Lớp này hữu ích khi muốn truy cập dữ liệu thông qua 1 key cụ thể thay vì sử dụng 1 integer index. Lớp Dictionary cung cấp framework cho 1 cấu trúc dữ liệu so khớp key thay vì 1 sự triển khai cụ thể. 
+- Lớp Hashtable: cung cấp các ý nghĩa về mặt tổ chức dữ liệu dựa vào cấu trúc và người dùng định nghĩa key. Ý nghĩa đặc trưng của các key liên quan tới hashtable là hoàn toàn phụ thuộc vào hashtable và dữ liệu nó chứa.
+- Lớp Properties: là lớp con của lớp Hashtable. Nó đc sd để duy trì danh sách các giá trị trong đó key là String và value cũng là 1 String. Lớp Properties đc sd bởi nhiều class khác trong Java.
+
+<a name="EnnumtrongJava"></a>
+
+**71. Enum trong Java**
+- Enum định nghĩa các phương thức từ đó có thể liệt kê (từng phần tử tại 1 thời điểm) các phần tử trong 1 tập hợp các đối tượng.
+- Interface này kế thừa từ Iterator. Enum đc sd bởi 1 vài phương thức đc định nghĩa bởi các lớp legacy như Vector và Properties, đc sd bởi 1 số lớp API khác và hiện tại sd rộng rãi trong code ứng dụng.
+- Các phương thức đc khai báo bởi Enumeration:
+
+<img src="https://2.pik.vn/2018889a5a1d-0e53-4d26-bc00-8e58fa55fdd8.jpg">
+
+<a name="EnnumtrongJava"></a>
+
+**72. Lớp BitSet**
+- Lớp BitSet tạo 1 kiểu mảng đặc biệt mà giữ các giá trị bit. Mảng BitSet này có thể tăng giảm kích cỡ nếu cần. Điều này làm nó tương tự như 1 vector của các bit.
+- BitSer định nghĩa 2 constructor, phiên bản đầu tiên tạo 1 đối tượng mặc định: BitSet() . Phiên bản thứ 2 cho phép xác định kích cỡ ban đầu của nó, vd như số bit mà nó có thể giữ, tất cả các bit đc khởi tạo về 0: BitSet(int size)
+- BitSet triển khai Cloneable Interface và định nghĩa các phương thức đc liệt kê sau:
+
+<img src="https://2.pik.vn/2018c80ad6b8-207e-4ff1-a7fd-a944fa1ba0e5.jpg">
+
+<img src="https://2.pik.vn/201890cef9e7-9bc2-48e7-93d0-c4833d6ec5e5.jpg">
+
+<img src="https://2.pik.vn/20181f0347b3-849f-44bd-8be0-925cdf4bbbfd.jpg">
+
+<img src="https://2.pik.vn/2018729be76b-9a6b-40db-a2c6-76fee0704da1.jpg">
+
+<a name="LopVector"></a>
+
+**73. Lớp Vector**
+- Lớp Vector triển khai 1 mảng động, tương tự ArrayList nhưng có 2 điểm khác: Vector được đồng bộ, Vector chứa các phương thức legacy mà không là 1 phần của Collection Framework.
+- Nếu k biết kích cỡ của mảng hoặc chỉ cần 1 thứ có thể thay đổi kích cỡ thông qua vòng đời của 1 chương trình, lớp Vector trở nên rất hữu ích.
+- Lớp Vector hỗ trợ 4 constructor:
+
+    Form đầu tiên tạo 1 vector mặc định, có kích cỡ khởi tạo là 10: Vector()
+
+    Form thứ 2 tạo 1 vector mà dung lượng khởi tạo đc xác định bởi size: Vector(int size)
+
+    Form thứ 3 tạo 1 vetor mà dung lượng khởi tạo đc xác định bởi size và lượng gia của nó đc xác định bởi incr. Lượng gia xác định số phần tử để cấp phát mỗi khi 1 vector được resize: Vector(int size, int incr)
+
+    Form thứ 4 tạo 1 vector chứa các phần tử của collection c: Vector(Collection c)
+
+- Các phương thức sau đc kế thừa từ lóp cha:
+
+<img src="https://2.pik.vn/2018a87273b0-5c7b-484f-b22c-a24cf3a54f2a.jpg">
+
+<img src="https://2.pik.vn/20182ea2e53d-671a-4a37-b027-be017c43bcc5.jpg">
+
+<img src="https://2.pik.vn/201826a99b64-817e-4c77-b362-df53c2d354b4.jpg">
+
+<img src="https://2.pik.vn/2018c4fa0fbf-67bf-4733-a34a-3786c6a970de.jpg">
+
+<img src="https://2.pik.vn/201833d0da33-7e8b-4292-8eef-5e541e15f442.jpg">
+
+<img src="https://2.pik.vn/2018cc2d2fbf-e080-4a6f-8317-6afe29c5850d.jpg">
+
+<a name="LopStack"></a>
+
+**74. Lớp Stack**
+
+
